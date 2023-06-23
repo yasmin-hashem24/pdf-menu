@@ -1,3 +1,3 @@
 # pdf-menu
 
-This is a simple system that host PDF menus from restaurants around the world - backed by PostgreSQL 
+This project is part of [SilverKey's Summer Internship 2023 Program](https://www.silverkeytech.com/blog/p/silverkey-monitor/silverkey-summer-internship-2023)
