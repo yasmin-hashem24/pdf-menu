@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "3jnsis2Agd9pmmXX/7RscBPoNRJpixbKiu7QtcA6RBEvmwW6Jc5rpQbPW4KS5WgxYC1kdxpZ9JdWLlIeqtSofA==",
+  "dgSpecHash": "QMxcg/wXJpoA4b2WnFwXkTmpG0Zwy0plc13WFKY/S5sUrOjqFttyBOjXlZwaSBMk6Dqzw2QdwnwgraZqEbcbNw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\PDFMenu.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\edgedb.net.driver\\1.2.3\\edgedb.net.driver.1.2.3.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

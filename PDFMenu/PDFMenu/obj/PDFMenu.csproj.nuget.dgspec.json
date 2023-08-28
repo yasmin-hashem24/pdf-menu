@@ -43,6 +43,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "EdgeDB.Net.Driver": {
+              "target": "Package",
+              "version": "[1.2.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
