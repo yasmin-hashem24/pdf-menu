@@ -36,6 +36,6 @@ type restaurant_filter {
 
   
 type top_rated {
-    name: restaurant;
-
+    name: str;
+    
   }}

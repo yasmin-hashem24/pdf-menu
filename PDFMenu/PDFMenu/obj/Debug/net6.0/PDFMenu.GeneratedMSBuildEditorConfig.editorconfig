@@ -15,16 +15,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Lenovo\Desktop\pdf-menu\PDFMenu\PDFMenu
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Features/Admins/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVhdHVyZXNcQWRtaW5zXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Features/Admins/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVhdHVyZXNcQWRtaW5zXFNpZ25VcC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Shared/_ValidationScriptsPartial.cshtml]

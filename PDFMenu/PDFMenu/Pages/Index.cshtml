@@ -5,14 +5,18 @@
 }
 
 <body>
- <header>
- <img src="https://drive.google.com/file/d/17h4qlymlataPR_OpZzFgsEnfYncY7ymv/view?usp=drive_link" alt="Logo" style="float: left; margin-right: 10px;">
+ <header  style="display: inline-block;">
+ <img src="~/Images/logo.png" alt="Logo"  width="100" height="60" style="float: left; display: inline-block; ">
  <div class="DineDocs" style="display: inline-block;">
     <p>DineDocs</p>
   </div>
   <div style="float: right; font-size :x-large; font-weight: bold;  margin-right : 200px">
-    <button style="background-color: transparent;  color: white;display: inline-block; border : none">Sign Up</button>
-     <button style="background-color: #2a2c41; color: white; border-radius: 15%; display: inline-block;">Login</button>
+   <form method="post" asp-page-handler="SignUp" style="display: inline-block;">
+    <button style="background-color: transparent; color: white; border: none;">Sign Up</button>
+</form>
+<form method="post" asp-page-handler="LogIn" style="display: inline-block;">
+    <button style="background-color: #2a2c41; color: white; border-radius: 15%;">Login</button>
+</form>
   </div>
 </header>
 
@@ -20,16 +24,20 @@
     <p>Discover Delicious Delights: Your Ultimate Menus Exploration App </p>
     </div>
 
-   
+        <div class="search-wrapper">
         <form method="get">
         <input type="text" id="SearchTerm" name="SearchTerm" placeholder="Search using tags , resturant name, district ....">
         <button type="submit" style="background-color: transparent; border: none;">
-            <img src="data:image/png;base64,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" alt="Search" style="width: 20px; height: 20px;">
+            <img src="~/Images/search.png" alt="Search" style="width: 40px; height: 40px;">
           </button>
         </form>
-
+        </div>
   <div class="Announce">
     <p>Top Rated for the month  </p>
+    </div>
+
+    <div class="top">
+
     </div>
 
 
@@ -42,7 +50,7 @@
   header {
   background-color: #fdbf50;
   color: white;
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   height : 4%;
 }
@@ -52,7 +60,7 @@
     word-break: break-all;
     font-weight: bold;
     font-size :x-large;
-    margin-left : 100px;
+    margin-top:10px;
     color: #2a2c41;
 
 }
@@ -61,16 +69,30 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-      margin-top : 50px;
+  margin-top:10px;
 }
 input[type="text"] {
-  width: 50%;
- font-size: 24px; 
- padding: 10px; 
- border: none; 
- background-color: white;
+  
+     width:100%;
+     font-size: 24px; 
+     padding: 5px; 
+    border:none;
+     background-color: white;
+      margin-left : 10px;
+   margin-right : 100px;
 
- 
+
+}
+.search-wrapper {
+  
+  padding: 5px; 
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid darkgrey;
+  border-radius: 20px;
+  margin-left : 450px;
+   margin-right : 450px;
 }
 .Announce {
     white-space: normal;
@@ -81,5 +103,7 @@ input[type="text"] {
     margin-top : 100px;
     color: #2a2c41;
 }
+.top{
 
+}
 </style>

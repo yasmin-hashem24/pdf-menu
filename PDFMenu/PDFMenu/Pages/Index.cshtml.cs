@@ -1,20 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using EdgeDB;
+namespace PDFMenu.Pages;
 
-namespace PDFMenu.Pages
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+
+    private readonly EdgeDBClient _edgeDbClient;
+    public IndexModel(EdgeDBClient edgeDbClient)
     {
-        private readonly ILogger<IndexModel> _logger;
+        _edgeDbClient = edgeDbClient;
+    }
+    public IActionResult OnPostLogIn()
+    {
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
+        return RedirectToPage("Features/Admins/Login");
+    }
 
-        public void OnGet()
-        {
-
-        }
+    public IActionResult OnPostSignUp()
+    {
+        return RedirectToPage("Features/Admins/SignUp");
     }
 }

@@ -1,0 +1,214 @@
+﻿@page
+@model PDFMenu.Pages.Features.Admins.SignUpModel
+@{
+}
+
+
+<body>
+ <header  style="display: inline-block;">
+ <img src="~/Images/logo.png" alt="Logo"  width="100" height="60" style="float: left; display: inline-block; ">
+ <div class="DineDocs" style="display: inline-block;">
+    <p>DineDocs</p>
+  </div>
+</header>
+
+ <form method="post" asp-page-handler="Return" style="position: absolute; top: 10px; right: 10px;">
+   <button type="submit" style="background-color: transparent; border: none;">
+            <img src="~/Images/back.png" alt="Search" style="width: 40px; height: 40px;">
+          </button>
+           </form>
+<div class="container">
+    <h2>Sign Up</h2>
+  
+    <form>
+    <div class="form-row">
+    <div class="form-group">
+      <label for="Email">Email</label>
+      <input type="email" id="Email" name="Email" required>
+    </div>
+    <div class="form-group">
+      <label for="PhoneNumber">PhoneNumber</label>
+      <input type="text" id="PhoneNumber" name="PhoneNumber" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="Password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+
+     <div class="form-group">
+      <label for="Password Confirmation">Password Confirmation</label>
+      <input type="password" id="PasswordConfirmation" name="PasswordConfirmation" required>
+    </div>
+  </div>
+  <div class="separator">
+
+  </div>
+
+      <div class="form-row">
+    <div class="form-group">
+      <label for="Resturant">Resturant</label>
+      <input type="text" id="Resturant" name="Resturant" required>
+    </div>
+    <div class="form-group">
+      <label for="Facebook">Facebook</label>
+      <input type="text" id="Facebook" name="Facebook">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="Instagram">Instagram:</label>
+      <input type="text" id="Instagram" name="Instagram">
+    </div>
+
+     <div class="form-group">
+      <label for="Twitter">Twitter</label>
+      <input type="text" id="Twitter" name="Twitter">
+    </div>
+  </div>
+  <div class="separator">
+
+  </div>
+  <div class="form-row">
+ <div class="form-group">
+ 
+  <select id="Country" name="Country">
+  <option value="">Country</option>
+  @foreach (var country in Model.Countries) {
+    <option value="@country">@country</option>
+  }
+</select>
+
+  </div>
+
+  <div class="form-group">
+ 
+  <select id="City" name="City">
+  <option value="">City</option>
+  @foreach (var country in Model.Cities) {
+    <option value="@country">@country</option>
+  }
+</select>
+
+  </div>
+  </div>
+
+
+    <div class="form-row">
+ <div class="form-group">
+ 
+  <select id="District" name="District">
+  <option value="">District</option>
+  @foreach (var country in Model.Districts) {
+    <option value="@country">@country</option>
+  }
+</select>
+
+  </div>
+
+  <div class="form-group">
+   <label for="Address">Address</label>
+      <input type="text" id="Address" name="Address">
+ 
+  </div>
+   </div>
+
+    <div class="separator">
+
+  </div>
+  <button type="submit">Sign Up</button>
+  </form>
+  </div>
+
+</body>
+<style>
+
+  body{
+      background-color:#f4f4f8;
+
+  }
+  header {
+  background-color: #fdbf50;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  height : 4%;
+}
+.DineDocs {
+    white-space: normal;
+    text-align: left;
+    word-break: break-all;
+    font-weight: bold;
+    font-size :x-large;
+    margin-top:10px;
+    color: #2a2c41;
+}
+.container {
+  background-color: #2a2c41;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+   border-radius: 20px;
+    padding: 50px;
+}
+h2
+{
+    color: #f4f4f8;
+
+}
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-group {
+  width: calc(50% - 10px);
+}
+.separator
+{
+    height:100px;
+}
+label {
+    color: #f4f4f8;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type=email], input[type=password] {
+  
+     background-color: #2a2c41;
+     border-radius: 20px;
+     border: 1px solid  #f4f4f8;
+     padding: 5px;
+     margin-bottom: 10px;
+     width: 300px;
+}
+
+ select {
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid  #f4f4f8;
+    border-radius: 4px;
+    background-color:  #f4f4f8;
+    box-sizing: border-box;
+    margin-top: 6px;
+    width: 200px; 
+  }
+
+   button[type="submit"] {
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 20px;
+    background-color: #fdbf50;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    width: 200px;
+    }
+</style>
