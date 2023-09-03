@@ -11,13 +11,18 @@ type user{
 
 }
 type restaurant {
-  required name: str;
+ 
   required email: str;
+  required restaurant: str;
   required phone_number:str;
-  facebook_link: str;
-  instagram_link: str;
+  facebook: str;
+  instagram: str;
+  twitter: str;
   required password: str;
-  required district: str;
+  required country:str;
+  required address:str;
+  city: str;
+  district: str;
   tags: array<str>;
   opening_hours: str;
   menu_pdf: str;
@@ -34,8 +39,4 @@ type restaurant_filter {
     tags: array<str>;
   }
 
-  
-type top_rated {
-    name: str;
-    
-  }}
+  }

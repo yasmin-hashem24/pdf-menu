@@ -11,11 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Features\Users\" />
-    <Folder Include="wwwroot\Images\coverpics\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\Images\logo.png" />
   </ItemGroup>
 

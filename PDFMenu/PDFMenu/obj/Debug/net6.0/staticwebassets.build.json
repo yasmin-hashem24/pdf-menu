@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "N6743+WNe3F36rKCDxBAF6By+F4O1igg/wRBvAi0VpQ=",
+  "Hash": "4SW0VL3s6ObKa1vrQtXs0/zT2EOIkfs5xKNBu0cBtAw=",
   "Source": "PDFMenu",
   "BasePath": "_content/PDFMenu",
   "Mode": "Default",
@@ -168,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\coverpics\\KFC.png"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\Images\\coverpics\\lukaa.jpg",
+      "SourceId": "PDFMenu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\",
+      "BasePath": "_content/PDFMenu",
+      "RelativePath": "Images/coverpics/lukaa.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\coverpics\\lukaa.jpg"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\Images\\logo.png",

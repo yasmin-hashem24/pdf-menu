@@ -15,12 +15,40 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Lenovo\Desktop\pdf-menu\PDFMenu\PDFMenu
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Features/Admins/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVhdHVyZXNcQWRtaW5zXExvZ2luLmNzaHRtbA==
+[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Features/Admins/AddUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVhdHVyZXNcQWRtaW5zXEFkZFVzZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Features/Admins/SignUp.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVhdHVyZXNcQWRtaW5zXFNpZ25VcC5jc2h0bWw=
+[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Features/Admins/AdminPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVhdHVyZXNcQWRtaW5zXEFkbWluUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Features/Admins/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVhdHVyZXNcQWRtaW5zXFByaXZhY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Features/Admins/RemoveUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVhdHVyZXNcQWRtaW5zXFJlbW92ZVVzZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Features/Admins/UpdateEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVhdHVyZXNcQWRtaW5zXFVwZGF0ZUVtYWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Features/Admins/UpdatePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVhdHVyZXNcQWRtaW5zXFVwZGF0ZVBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Features/NormalUsers/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVhdHVyZXNcTm9ybWFsVXNlcnNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Features/NormalUsers/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVhdHVyZXNcTm9ybWFsVXNlcnNcUmVzZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Features/NormalUsers/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVhdHVyZXNcTm9ybWFsVXNlcnNcU2lnblVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/Desktop/pdf-menu/PDFMenu/PDFMenu/Pages/Index.cshtml]
