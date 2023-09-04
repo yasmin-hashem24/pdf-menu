@@ -1,0 +1,66 @@
+﻿
+body {
+    background-color: #f4f4f8;
+}
+
+header {
+    background-color: #fdbf50;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.DineDocs {
+    white-space: normal;
+    text-align: left;
+    word-break: break-all;
+    font-weight: bold;
+    font-size: xx-large;
+    margin-top: 10px;
+    color: #2a2c41;
+    display: inline-block;
+}
+
+.container {
+    background-color: #2a2c41;
+    margin: 50px auto 40px;
+    width: 50%;
+    border-radius: 20px;
+    padding: 50px;
+}
+
+h2 {
+    color: #f4f4f8;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-group {
+    width: 48%;
+}
+
+
+
+.separator {
+    height: 20px;
+}
+
+
+button[type="submit"] {
+    background-color: #fdbf50;
+    border-radius: 20px;
+    border: 1px solid #fdbf50;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+}
+

@@ -23,7 +23,6 @@ public class IndexModel : PageModel
             var result = await _edgeDbClient.QueryAsync<RestaurantGot>(query);
             TopRatedRestaurants = result.ToList();
 
-        Console.WriteLine(TopRatedRestaurants[0].phone_number);
         return Page();
     }
     public IActionResult OnPostLogIn()

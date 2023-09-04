@@ -4,19 +4,19 @@
     ViewData["Title"] = "Home page";
 }
 
-<body>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
- <header  style="display: inline-block;">
- <img src="~/Images/logo.png" alt="Logo"  width="100" height="60" style="float: left; display: inline-block; ">
- <div class="DineDocs" style="display: inline-block;">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+ <link rel="stylesheet" href="~/css/NormalUSers/Index.css" />
+ <header>
+ <img src="~/Images/logo.png" alt="Logo" width="100" height="60" class="float-start">
+ <div class="DineDocs">
     <p>DineDocs</p>
   </div>
-  <div style="float: right; font-size :x-large; font-weight: bold;  margin-right : 200px">
-   <form method="post" asp-page-handler="SignUp" style="display: inline-block;">
-    <button style="background-color: transparent; color: white; border: none;">Sign Up</button>
+  <div class="headbuttons">
+   <form method="post" asp-page-handler="SignUp" class="d-inline-block">
+    <button type="submit">Sign Up</button>
 </form>
-<form method="post" asp-page-handler="LogIn" style="display: inline-block;">
-    <button style="background-color: #2a2c41; color: white; border-radius: 15%;">Login</button>
+<form method="post" asp-page-handler="LogIn" class="d-inline-block">
+    <button class="btn-login">Login</button>
 </form>
   </div>
 </header>
@@ -28,8 +28,8 @@
         <div class="search-wrapper">
         <form method="get">
         <input type="text" id="SearchTerm" name="SearchTerm" placeholder="Search using tags , restaurant name, district ....">
-        <button type="submit" style="background-color: transparent; border: none;">
-            <img src="~/Images/search.png" alt="Search" style="width: 40px; height: 40px;">
+        <button type="submit">
+            <img src="~/Images/search.png" alt="Search" width= "40" height= "40">
           </button>
         </form>
         </div>
@@ -54,90 +54,3 @@
   }
 </div>
 
-
-
-</body>
-<style>
-
-  body{
-      background-color:#f4f4f8;
-  }
-  header {
-  background-color: #fdbf50;
-  color: white;
-  padding: 10px;
-  width: 100%;
-  height : 4%;
-}
-.DineDocs {
-    white-space: normal;
-    text-align: left;
-    word-break: break-all;
-    font-weight: bold;
-    font-size :xx-large;
-    margin-top:10px;
-    color: #2a2c41;
-
-}
-
-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top:10px;
-}
-input[type="text"] {
-  
-     width:100%;
-     font-size: 24px; 
-     padding: 5px; 
-    border:none;
-     background-color: white;
-      margin-left : 10px;
-   margin-right : 100px;
-
-
-}
-.search-wrapper {
-  
-  padding: 5px; 
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  border: 1px solid darkgrey;
-  border-radius: 20px;
-  margin-left : 450px;
-   margin-right : 450px;
-}
-.Announce {
-    white-space: normal;
-    text-align: center;
-    word-break: break-all;
-    font-weight: bold;
-    font-size :xx-large;
-    margin-top : 100px;
-    color: #2a2c41;
-}
-.top {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.restaurant {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
- 
-}
-
-.cover-photo {
-  width: 200px;
-  height: 200px;
-}
-
-.rating {
-  margin-top: 10px;
-  color: #fdbf50;
-}
-</style>
