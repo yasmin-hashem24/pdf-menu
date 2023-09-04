@@ -42,14 +42,3 @@ button.accept-policy[b-wrk6aa7thz] {
   white-space: nowrap;
   line-height: 60px;
 }
-
-.DineDocs[b-wrk6aa7thz] {
-    white-space: normal;
-    text-align: left;
-    word-break: break-all;
-    font-weight: bold;
-    font-size: xx-large;
-    margin-top: 10px;
-    color: #2a2c41;
-    display: inline-block;
-}

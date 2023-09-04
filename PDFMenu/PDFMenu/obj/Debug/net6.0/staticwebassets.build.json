@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9SqWq8vLju0pxcusiYBp4mj+wvuMOxNdghFw/UjAu1I=",
+  "Hash": "PV+etSbuG2ZyyqKqf27RXCr2qxBmDAz1rjg2ElVzWbM=",
   "Source": "PDFMenu",
   "BasePath": "_content/PDFMenu",
   "Mode": "Default",
@@ -100,40 +100,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Admins\\Privacy.css"
-    },
-    {
-      "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\css\\Admins\\UpdateEmail.css",
-      "SourceId": "PDFMenu",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\",
-      "BasePath": "_content/PDFMenu",
-      "RelativePath": "css/Admins/UpdateEmail.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\Admins\\UpdateEmail.css"
-    },
-    {
-      "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\css\\Admins\\UpdateUsers.css",
-      "SourceId": "PDFMenu",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\",
-      "BasePath": "_content/PDFMenu",
-      "RelativePath": "css/Admins/UpdateUsers.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\Admins\\UpdateUsers.css"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\css\\NormalUsers\\Index.css",
