@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PV+etSbuG2ZyyqKqf27RXCr2qxBmDAz1rjg2ElVzWbM=",
+  "Hash": "hXZErnRStutPNU6Jwp1/ba1ye3Vq+kcjrDBPhjfcu6o=",
   "Source": "PDFMenu",
   "BasePath": "_content/PDFMenu",
   "Mode": "Default",
@@ -287,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\coverpics\\KFC.png"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\Images\\coverpics\\KFCCover.jpeg",
+      "SourceId": "PDFMenu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\",
+      "BasePath": "_content/PDFMenu",
+      "RelativePath": "Images/coverpics/KFCCover.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\coverpics\\KFCCover.jpeg"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\Images\\coverpics\\lukaa.jpg",

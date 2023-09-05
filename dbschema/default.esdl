@@ -28,6 +28,7 @@ type restaurant {
   menu_pdf: str;
   menu_upload_date: datetime;
   cover_photo: str;
+  main_photo: str;
   rating : int16;
  
 }

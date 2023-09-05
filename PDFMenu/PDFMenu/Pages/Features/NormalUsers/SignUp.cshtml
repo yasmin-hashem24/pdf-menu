@@ -63,38 +63,98 @@
         </div>
       </div>
       <div class="separator"></div>
-      <div class="form-row">
-        <div class="form-group">
-          <select id="Country" name="Country">
-            <option value="">Country</option>
-            @foreach (var country in Model.Countries)
-            {
-            <option value="@country">@country</option>
-            }
-          </select>
-        </div>
+<div class="form-row">
+  <div class="form-group">
+    <select id="Country" name="Country" onchange="updateCities()">
+      <option value="">Country</option>
+      @foreach (var country in Model.Countries)
+      {
+        <option value="@country">@country</option>
+      }
+    </select>
+  </div>
 
-        <div class="form-group">
-          <select id="City" name="City">
-            <option value="">City</option>
-            @foreach (var country in Model.Countries)
-            {
-            <option value="@country">@country</option>
-            }
-          </select>
-        </div>
-      </div>
-
+ <div class="form-group">
+    <select id="City" name="City" onchange="updateDistricts()">
+      <option value="">City</option>
+    </select>
+  </div>
+     </div>  
+     
       <div class="form-row">
         <div class="form-group">
           <select id="District" name="District">
             <option value="">District</option>
-            @foreach (var country in Model.Countries)
+            @foreach (var country in Model.Districts)
             {
             <option value="@country">@country</option>
             }
           </select>
         </div>
+<script>
+function updateCities() {
+  var country = document.getElementById("Country").value;
+  var cities = getCitiesForCountry(country);
+  var citySelect = document.getElementById("City");
+  
+  citySelect.innerHTML = "";
+  
+  for (var i = 0; i < cities.length; i++) {
+    var option = document.createElement("option");
+    option.text = cities[i];
+    option.value = cities[i];
+    citySelect.add(option);
+  }
+}
+
+function updateDistricts() {
+  var country = document.getElementById("Country").value;
+  var city = document.getElementById("City").value;
+  var districts = getDistrictsForCity(country, city);
+  var districtSelect = document.getElementById("District");
+  
+  districtSelect.innerHTML = "";
+
+  for (var i = 0; i < districts.length; i++) {
+    var option = document.createElement("option");
+    option.text = districts[i];
+    option.value = districts[i];
+    districtSelect.add(option);
+  }
+}
+function getCitiesForCountry(country) {
+ 
+  var cityDict = {
+    "Algeria": ["Algiers", "Oran", "Constantine"],
+    "Angola": ["Luanda", "Huambo", "Lobito"],
+    "Benin": ["Cotonou", "Porto-Novo", "Parakou"],
+    "Botswana": ["Gaborone", "Francistown", "Molepolole"],
+    "Burkina Faso": ["Ouagadougou", "Bobo-Dioulasso", "Koudougou"],
+    "Burundi": ["Bujumbura", "Gitega", "Ngozi"],
+    "Cameroon": ["Yaounde", "Douala", "Bamenda"],
+    "Cape Verde": ["Praia", "Mindelo", "Santa Maria"],
+    "Central African Republic": ["Bangui", "Bimbo", "Berberati"],
+    "Chad": ["N'Djamena", "Moundou", "Sarh"],
+    "Comoros": ["Moroni", "Moutsamoudou", "Fomboni"],
+    "Democratic Republic of the Congo": ["Kinshasa", "Lubumbashi", "Mbuji-Mayi"],
+    "Djibouti": ["Djibouti City", "Ali Sabieh", "Tadjoura"],
+    "Egypt": ["Cairo", "Alexandria", "Giza","Aswan","Luxor","Tanta","Banisuef","Hurgada"],
+   
+  };
+  
+ 
+  return cityDict[country] || [];
+}
+function getDistrictsForCity(country, city) {
+  var districtDict = {
+   
+    "Cairo": ["Nasr City", "Heliopolis", "Maadi","Helwan","Shobra","Sheraton"],
+    
+     };
+  return districtDict[city] || [];
+}
+</script>
+     
 
         <div class="form-group">
           <label for="Address">Address</label>

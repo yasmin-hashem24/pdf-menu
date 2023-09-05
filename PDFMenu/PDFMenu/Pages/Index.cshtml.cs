@@ -37,15 +37,3 @@ public class IndexModel : PageModel
     }
 
 }
-public class RestaurantGot
-{
-    public string email { get; set; } = " ";
-    public string phone_number { get; set; } = " ";
-  
-    public string restaurant { get; set; } = " ";
-
-    public Int16 rating { get; set; } = 0;
-
-    public string cover_photo { get; set; } = " ";
-
-}
