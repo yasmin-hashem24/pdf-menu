@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1oGj9oCp3YU6Cguiutuwr8osbbPRyUuK6rUS/BKVV+4=",
+  "Hash": "kA6T40X/F5c8ERwDBI3BojNYXY0XxWQfFhYchw+2lWo=",
   "Source": "PDFMenu",
   "BasePath": "_content/PDFMenu",
   "Mode": "Default",
@@ -1392,40 +1392,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Menus\\KFCMenu.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\Menus\\Logic-2 Final Q1 Fall 2021.pdf",
-      "SourceId": "PDFMenu",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\",
-      "BasePath": "_content/PDFMenu",
-      "RelativePath": "Menus/Logic-2 Final Q1 Fall 2021.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Menus\\Logic-2 Final Q1 Fall 2021.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\Menus\\Midterm Fall 2020.pdf",
-      "SourceId": "PDFMenu",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\",
-      "BasePath": "_content/PDFMenu",
-      "RelativePath": "Menus/Midterm Fall 2020.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Menus\\Midterm Fall 2020.pdf"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\Menus\\Yasmin_Hashem Niazy_Resume.pdf",

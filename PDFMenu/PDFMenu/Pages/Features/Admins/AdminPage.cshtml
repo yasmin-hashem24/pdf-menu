@@ -101,13 +101,16 @@
 </div>
 
 <div id="popup" class="popup hidden">
+      <div class="popup-content">
     <form method="post" enctype="multipart/form-data">
         <input type="file" name="file" class="file-upload"><br><br>
         <input type="hidden" name="email" value="@Model.RestaurantGot.email">
-        <input type="submit" value="Upload">
+        <input type="submit" value="Upload" class="file-upload">
     </form>
     <button class="close-btn" onclick="hidePopup()">X</button>
 </div>
+</div>
+
 
  
  
