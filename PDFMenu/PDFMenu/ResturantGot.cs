@@ -22,6 +22,9 @@
         public string district { get; set; } = " ";
         public string address { get; set; } = " ";
 
-
+        public string[] tags { get; set; }
+        public string menu_pdf { get; set; } = " ";
+        public string opening_hours { get; set; } = " ";
+        public DateTime menu_upload_date { get; set; } = DateTime.Now;
     }
 }

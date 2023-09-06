@@ -20,101 +20,6 @@ header {
     color: #2a2c41;
 }
 
-.container {
-    background-color: #2a2c41;
-    margin-top: 50px;
-    margin-bottom: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-    border-radius: 20px;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup {
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: #f4f4f8;
-    padding: 20px;
-    border-radius: 10px;
-    width: 30%;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.close {
-    color: #2a2c41;
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-h2 {
-    color: #2a2c41;
-    margin: 10px auto;
-}
-
-.form-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-label {
-    
-    color: #f4f4f8;
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-input[type=email] {
-    background-color: #2a2c41;
-    border-radius: 20px;
-    border: 1px solid #f4f4f8;
-    padding: 5px;
-    margin: 10px auto;
-    width: 300px;
-}
-
-button[type="submit"] {
-    padding: 10px;
-    margin: 10px auto;
-    border-radius: 20px;
-    background-color: #fdbf50;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    display: block;
-    width: 200px;
-}
-
-
 .full-width-img {
 
     margin-top: 60px;
@@ -123,12 +28,59 @@ button[type="submit"] {
 
 }
 
-.img-col {
-    margin-left: 20px;
-    padding-right: 0;
+.rating {
+    margin-top: 10px;
+    color: #fdbf50;
+    font-size:50%;
+}
+.name {
+    font-size: 60px;
+    font-style: initial;
+    color: #2a2c41;
+}
+.pic {
+    margin-left: 60px;
+    max-width: 100%;
+}
+.tag {
+    opacity: 0.5;
+    font-size: 50%;
 }
 
-.label-col {
-    padding-left: 0;
+a {
+   
+    margin-left: 60px;
+    color: #fdbf50;
+    font-style: normal;
+    font-size: 70px;
+}
+.date-icon {
+    margin-left: 60px;
+    font-size: 40px;
+    color: #2a2c41;
 }
 
+.date-text {
+    margin-left: 30px;
+    font-size: 40px;
+    color: #2a2c41;
+}
+.contact {
+    margin-left: 60px;
+    color: #fdbf50;
+    font-style: normal;
+    font-size: 70px;
+}
+
+select {
+    font-size: 16px;
+    padding: 12px;
+    border:none;
+    
+    background-color: #f4f4f8;
+    box-sizing: border-box;
+    margin-top: 20px;
+    font-weight: bold;
+    float: right;
+    margin-right : 30px;
+}

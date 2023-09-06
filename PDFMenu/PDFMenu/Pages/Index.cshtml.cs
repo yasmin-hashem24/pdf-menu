@@ -16,7 +16,7 @@ public class IndexModel : PageModel
 
     public async Task<IActionResult> OnGetAsync()
     {
-        var query = "SELECT restaurant {email, restaurant, phone_number, rating,cover_photo} "+
+        var query = "SELECT restaurant {email, restaurant, phone_number, rating,cover_photo,main_photo} "+
                         "ORDER BY .rating DESC LIMIT 5";
 
         

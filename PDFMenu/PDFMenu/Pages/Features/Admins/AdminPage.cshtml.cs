@@ -17,14 +17,16 @@ public class AdminPageModel : PageModel
     }
     public async Task<IActionResult> OnGetAsync(string emaile)
     {
-        var query = "SELECT restaurant {email, password,restaurant,main_photo ,phone_number,cover_photo,facebook,instagram,twitter,country,address,city,district,rating} " +
+        var query = "SELECT restaurant { opening_hours,  menu_upload_date,menu_pdf,email,tags, password,restaurant,main_photo ,phone_number,cover_photo,facebook,instagram,twitter,country,address,city,district,rating} " +
                       "FILTER restaurant.email = <str>$email LIMIT 1;";
 
+      
         var returned = await _edgeDbClient.QuerySingleAsync<RestaurantGot>(query, new Dictionary<string, object>
     {
         { "email", emaile }
     });
 
+        Console.WriteLine(returned.tags.Length);
         if (returned != null)
         {
 

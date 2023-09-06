@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hXZErnRStutPNU6Jwp1/ba1ye3Vq+kcjrDBPhjfcu6o=",
+  "Hash": "cR/tqy2OCYl2J/00bCwZ0V7xkFx/FOahajRL4fgPfrc=",
   "Source": "PDFMenu",
   "BasePath": "_content/PDFMenu",
   "Mode": "Default",
@@ -1341,6 +1341,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\Menus\\KFCMenu.pdf",
+      "SourceId": "PDFMenu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\",
+      "BasePath": "_content/PDFMenu",
+      "RelativePath": "Menus/KFCMenu.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Menus\\KFCMenu.pdf"
     }
   ]
 }
