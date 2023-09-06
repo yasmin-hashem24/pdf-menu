@@ -27,3 +27,5 @@ C:\Users\Lenovo\Desktop\pdf-menu\PDFMenu\PDFMenu\obj\Debug\net6.0\refint\PDFMenu
 C:\Users\Lenovo\Desktop\pdf-menu\PDFMenu\PDFMenu\obj\Debug\net6.0\PDFMenu.pdb
 C:\Users\Lenovo\Desktop\pdf-menu\PDFMenu\PDFMenu\obj\Debug\net6.0\PDFMenu.genruntimeconfig.cache
 C:\Users\Lenovo\Desktop\pdf-menu\PDFMenu\PDFMenu\obj\Debug\net6.0\ref\PDFMenu.dll
+C:\Users\Lenovo\Desktop\pdf-menu\PDFMenu\PDFMenu\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Lenovo\Desktop\pdf-menu\PDFMenu\PDFMenu\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

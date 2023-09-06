@@ -1,13 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using EdgeDB;
+using System.Web;
+
 namespace PDFMenu.Pages.Features.Admins;
 
 public class AdminPageModel : PageModel
 {
     private readonly EdgeDBClient _edgeDbClient;
 
-   
+    [BindProperty]
+    public IFormFile File { get; set; }
 
     [BindProperty]
     public RestaurantGot RestaurantGot { get; set; }
@@ -41,4 +44,22 @@ public class AdminPageModel : PageModel
         }
     }
 
+    public IActionResult OnPost()
+    {
+        if (File != null && File.Length > 0)
+        {
+
+            // Save the uploaded file to the desired location
+            var filePath = Path.Combine("wwwroot/Menus", File.FileName);
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                File.CopyTo(fileStream);
+            }
+        }
+
+        // Optionally, you can perform additional processing or redirect to another page
+        return Page();
+    }
 }
+
+

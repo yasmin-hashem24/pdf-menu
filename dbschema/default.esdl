@@ -26,18 +26,11 @@ type restaurant {
   tags: array<str>;
   opening_hours: str;
   menu_pdf: str;
-  menu_upload_date: datetime;
+  menu_upload_date:datetime ;
   cover_photo: str;
   main_photo: str;
   rating : int16;
  
 }
-
-type restaurant_filter {
-    name: restaurant;
-    district: str;
-    location: str;
-    tags: array<str>;
-  }
 
   }

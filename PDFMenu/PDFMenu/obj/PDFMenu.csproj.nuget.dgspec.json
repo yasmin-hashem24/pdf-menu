@@ -47,6 +47,14 @@
             "EdgeDB.Net.Driver": {
               "target": "Package",
               "version": "[1.2.3, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "System.Text.Encodings.Web": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [

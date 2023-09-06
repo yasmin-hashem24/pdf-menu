@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cR/tqy2OCYl2J/00bCwZ0V7xkFx/FOahajRL4fgPfrc=",
+  "Hash": "kA6T40X/F5c8ERwDBI3BojNYXY0XxWQfFhYchw+2lWo=",
   "Source": "PDFMenu",
   "BasePath": "_content/PDFMenu",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\NormalUsers\\Login.css"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\css\\NormalUsers\\pdf.css",
+      "SourceId": "PDFMenu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\",
+      "BasePath": "_content/PDFMenu",
+      "RelativePath": "css/NormalUsers/pdf.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\NormalUsers\\pdf.css"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\css\\NormalUsers\\ResetPassword.css",
@@ -321,6 +338,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\coverpics\\lukaa.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\Images\\coverpics\\LukaCover.jpg",
+      "SourceId": "PDFMenu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\",
+      "BasePath": "_content/PDFMenu",
+      "RelativePath": "Images/coverpics/LukaCover.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\coverpics\\LukaCover.jpg"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\Images\\logo.png",
@@ -1358,6 +1392,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Menus\\KFCMenu.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\Menus\\Yasmin_Hashem Niazy_Resume.pdf",
+      "SourceId": "PDFMenu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\",
+      "BasePath": "_content/PDFMenu",
+      "RelativePath": "Menus/Yasmin_Hashem Niazy_Resume.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Menus\\Yasmin_Hashem Niazy_Resume.pdf"
     }
   ]
 }
