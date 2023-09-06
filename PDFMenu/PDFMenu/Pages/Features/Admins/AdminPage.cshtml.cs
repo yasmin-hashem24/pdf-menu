@@ -45,7 +45,7 @@ public class AdminPageModel : PageModel
 
     public async Task<IActionResult> OnPostAsync()
     {
-        var email = "lwakez.mklwaza@catsmails.com";
+        var email = Request.Form["email"];
         Console.WriteLine(email);
         if (File != null && File.Length > 0)
         {
