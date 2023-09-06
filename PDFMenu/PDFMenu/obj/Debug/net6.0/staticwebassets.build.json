@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kA6T40X/F5c8ERwDBI3BojNYXY0XxWQfFhYchw+2lWo=",
+  "Hash": "QdXmRt4r4GksmCbnXiWdkX5EOzw51XHrWQxNhZ7Zhsk=",
   "Source": "PDFMenu",
   "BasePath": "_content/PDFMenu",
   "Mode": "Default",
@@ -170,6 +170,23 @@
       "OriginalItemSpec": "wwwroot\\css\\NormalUsers\\ResetPassword.css"
     },
     {
+      "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\css\\NormalUsers\\RestaurantPage.css",
+      "SourceId": "PDFMenu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\",
+      "BasePath": "_content/PDFMenu",
+      "RelativePath": "css/NormalUsers/RestaurantPage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\NormalUsers\\RestaurantPage.css"
+    },
+    {
       "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\css\\NormalUsers\\SignUp.css",
       "SourceId": "PDFMenu",
       "SourceType": "Discovered",
@@ -270,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\coverpics\\garnell.png"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\Images\\coverpics\\GarnellCover.jpg",
+      "SourceId": "PDFMenu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\",
+      "BasePath": "_content/PDFMenu",
+      "RelativePath": "Images/coverpics/GarnellCover.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\coverpics\\GarnellCover.jpg"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\Desktop\\pdf-menu\\PDFMenu\\PDFMenu\\wwwroot\\Images\\coverpics\\karam el sham.jpeg",

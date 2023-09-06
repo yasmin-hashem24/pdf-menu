@@ -41,7 +41,8 @@
   @foreach (var restaurant in Model.TopRatedRestaurants)
   {
     <div class="restaurant">
-      <a href="/restaurant/@restaurant.restaurant">
+       
+      <a href="Features/NormalUsers/RestaurantPage/@restaurant.restaurant">
         <img src="~/Images/coverpics/@restaurant.main_photo" alt="Restaurant Cover Photo" class="cover-photo" />
       </a>
       <div class="rating">

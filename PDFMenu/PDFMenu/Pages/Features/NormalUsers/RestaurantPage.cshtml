@@ -1,0 +1,97 @@
+﻿@page "{restaurant}"
+@model PDFMenu.Pages.Features.NormalUsers.RestaurantPageModel
+@{
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<link rel="stylesheet" href="~/css/NormalUsers/RestaurantPage.css" />
+  <header>
+        <div style="display: flex; align-items: center;">
+ <img src="~/Images/logo.png" alt="Logo" width="100" height="60" class="float-start">
+          <div class="DineDocs">
+            <p>DineDocs</p>
+          </div>
+        </div>
+  </header>
+
+
+
+ <img src="~/Images/coverpics/@Model.RestaurantGot.cover_photo" alt="Cover Photo" class="img-fluid rounded full-width-img">
+ <div class="separator"></div>
+
+<div class="row" style="max-width: 100%;">
+  <div class="col-md-2 pic">
+    <img src="~/Images/coverpics/@Model.RestaurantGot.main_photo" alt="Image" class="img-fluid">
+  </div>
+  <div class="col-md name">
+    <div class="fw-bold label">@Model.RestaurantGot.restaurant</div>
+ <div class="d-flex align-items-center">
+  <div class="tags">
+    @foreach (var tag in Model.RestaurantGot.tags)
+    {
+      <span class="badge bg-secondary tag">@tag</span>
+    }
+  </div>
+  <div class="rating ms-3">
+    @for (int i = 0; i < @Model.RestaurantGot.rating; i++)
+    {
+      <i class="fas fa-star"></i>
+    }
+
+      @for (int i = 0; i <5- @Model.RestaurantGot.rating; i++)
+    {
+     <i class="fas fa-star" style="color:  #2a2c41;"></i>
+    }
+
+  </div>
+
+</div>
+
+ </div>
+
+
+<hr style="border: none; height: 1px; background-color: #000000; opacity: 0.5; margin-bottom:60px ;">
+ 
+
+<a href="/Features/NormalUsers/PDFMenu/@Model.RestaurantGot.menu_pdf" style="width:900px; margin-left: 60px;">View PDF Menu</a>
+<div class="row">
+    <div class="col-md-9">
+        <div class="d-flex align-items-center">
+            <i class="far fa-calendar-alt date-icon"></i>
+            <p class="date-text">@Model.RestaurantGot.menu_upload_date   Last Updated</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="d-flex align-items-center">
+            <i class="far fa-clock date-icon"></i>
+            <p class="date-text">@Model.RestaurantGot.opening_hours</p>
+        </div>
+
+        <div class="d-flex align-items-center">
+            <i class="fas fa-phone-alt date-icon"></i>
+            <p class="date-text">@Model.RestaurantGot.phone_number</p>
+        </div>
+
+        <div class="d-flex align-items-center">
+            <i class="fas fa-map-marker-alt date-icon"></i>
+            <p class="date-text">@Model.RestaurantGot.address</p>
+            <p class="add-text">@Model.RestaurantGot.city</p>
+            <p class="add-text">@Model.RestaurantGot.country</p>
+        </div>
+
+        <div class="separator"></div>
+        <div class="separator"></div>
+        <div class="separator"></div>
+
+       
+    </div>
+     <div class="d-flex align-items-center">
+            <a href=@Model.RestaurantGot.facebook style="margin-left:60px"><i class="fab fa-facebook"></i></a>
+            <a href=@Model.RestaurantGot.instagram><i class="fab fa-instagram"></i></a>
+            <a href=@Model.RestaurantGot.twitter><i class="fab fa-twitter"></i></a>
+            <div class="contact">Contact Us</div>
+        </div>
+</div>
+
+
+
+ 
