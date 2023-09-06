@@ -20,7 +20,7 @@ public class AdminPageModel : PageModel
     }
     public async Task<IActionResult> OnGetAsync(string emaile)
     {
-        var query = "SELECT restaurant { opening_hours,  menu_upload_date,menu_pdf,email,tags, password,restaurant,main_photo ,phone_number,cover_photo,facebook,instagram,twitter,country,address,city,district,rating} " +
+        var query = "SELECT restaurant { opening_hours, menu_upload_date,menu_pdf,email,tags, password,restaurant,main_photo ,phone_number,cover_photo,facebook,instagram,twitter,country,address,city,district,rating} " +
                       "FILTER restaurant.email = <str>$email LIMIT 1;";
 
       
@@ -29,7 +29,6 @@ public class AdminPageModel : PageModel
         { "email", emaile }
     });
 
-        Console.WriteLine(returned.tags.Length);
         if (returned != null)
         {
 
@@ -44,8 +43,10 @@ public class AdminPageModel : PageModel
         }
     }
 
-    public IActionResult OnPost()
+    public async Task<IActionResult> OnPostAsync()
     {
+        var email = "lwakez.mklwaza@catsmails.com";
+        Console.WriteLine(email);
         if (File != null && File.Length > 0)
         {
 
@@ -56,9 +57,24 @@ public class AdminPageModel : PageModel
                 File.CopyTo(fileStream);
             }
         }
+        var query = @"
+                    UPDATE restaurant
+                    FILTER restaurant.email = <str>$email
+                    SET {
+                        menu_upload_date := <datetime>$menu_upload_date,
+                        menu_pdf := <str>$menu_pdf
+                    
+                    }";
+        await _edgeDbClient.ExecuteAsync(query, new Dictionary<string, object?>
+                    {
+                        { "email",email },
+                        { "menu_upload_date", DateTime.Now },
+                        { "menu_pdf", File.FileName }
+                       
+                    });
 
-        // Optionally, you can perform additional processing or redirect to another page
-        return Page();
+
+        return RedirectToPage("AdminPage", new { emaile = email });
     }
 }
 

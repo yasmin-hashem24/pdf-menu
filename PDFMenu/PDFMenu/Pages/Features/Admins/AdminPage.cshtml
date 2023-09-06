@@ -23,7 +23,6 @@
 </select>
 
 
-
  <img src="~/Images/coverpics/@Model.RestaurantGot.cover_photo" alt="Cover Photo" class="img-fluid rounded full-width-img">
  <div class="separator"></div>
 
@@ -62,43 +61,62 @@
  
 
 <a href="/Features/NormalUsers/PDFMenu/@Model.RestaurantGot.menu_pdf" style="width:900px; margin-left: 60px;">View PDF Menu</a>
-
 <div class="row">
     <div class="col-md-9">
- <div class="d-flex align-items-center">
- <i class="far fa-calendar-alt date-icon"></i>
-<p class="date-text">@Model.RestaurantGot.menu_upload_date   Last Updated</p>
-</div>
-</div>
-  <div class="col-md-3">
-      <div class="d-flex align-items-center">
- <i class="far fa-clock date-icon"></i>
- <p class="date-text">@Model.RestaurantGot.opening_hours</p>
+        <div class="d-flex align-items-center">
+            <i class="far fa-calendar-alt date-icon"></i>
+            <p class="date-text">@Model.RestaurantGot.menu_upload_date   Last Updated</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="d-flex align-items-center">
+            <i class="far fa-clock date-icon"></i>
+            <p class="date-text">@Model.RestaurantGot.opening_hours</p>
+        </div>
+
+        <div class="d-flex align-items-center">
+            <i class="fas fa-phone-alt date-icon"></i>
+            <p class="date-text">@Model.RestaurantGot.phone_number</p>
+        </div>
+
+        <div class="d-flex align-items-center">
+            <i class="fas fa-map-marker-alt date-icon"></i>
+            <p class="date-text">@Model.RestaurantGot.address</p>
+            <p class="add-text">@Model.RestaurantGot.city</p>
+            <p class="add-text">@Model.RestaurantGot.country</p>
+        </div>
+
+        <div class="separator"></div>
+        <div class="separator"></div>
+        <div class="separator"></div>
+
+       
+    </div>
+     <div class="d-flex align-items-center">
+            <a href=@Model.RestaurantGot.facebook style="margin-left:60px"><i class="fab fa-facebook"></i></a>
+            <a href=@Model.RestaurantGot.instagram><i class="fab fa-instagram"></i></a>
+            <a href=@Model.RestaurantGot.twitter><i class="fab fa-twitter"></i></a>
+            <div class="contact">Contact Us</div>
+        </div>
 </div>
 
-  <div class="d-flex align-items-center">
- <i class="fas fa-phone-alt date-icon"></i>
- <p class="date-text">@Model.RestaurantGot.phone_number</p>
+<div id="popup" class="popup hidden">
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" class="file-upload"><br><br>
+        <input type="hidden" name="email" value="@Model.RestaurantGot.email">
+        <input type="submit" value="Upload">
+    </form>
+    <button class="close-btn" onclick="hidePopup()">X</button>
 </div>
-
-  <div class="d-flex align-items-center">
- <i class="fas fa-map-marker-alt date-icon"></i>
- <p class="date-text">@Model.RestaurantGot.address</p>
- <p class="add-text">@Model.RestaurantGot.city</p>
- <p class="add-text">@Model.RestaurantGot.country</p>
-</div>
-</div>
-
- <div class="separator"></div>
- <div class="separator"></div>
- <div class="separator"></div>
-
-  <div class="d-flex align-items-center">
- <a href=@Model.RestaurantGot.facebook style="margin-left:60px"><i class="fab fa-facebook"></i></a>
-<a href=@Model.RestaurantGot.instagram><i class="fab fa-instagram"></i></a>
-<a href=@Model.RestaurantGot.twitter><i class="fab fa-twitter"></i></a>
-<div class="contact">Contact Us</div>
-  </div>
-
 
  
+ 
+<script>
+function showPopup() {
+    document.getElementById("popup").classList.remove("hidden");
+}
+
+function hidePopup() {
+    document.getElementById("popup").classList.add("hidden");
+}
+</script>
