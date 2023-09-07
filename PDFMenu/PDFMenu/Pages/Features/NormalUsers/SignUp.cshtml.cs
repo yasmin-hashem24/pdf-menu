@@ -2,7 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Identity;
 using EdgeDB;
-
+using MailKit.Net.Smtp;
+using MailKit.Security;
+using Microsoft.Extensions.Options;
+using MimeKit;
 namespace PDFMenu.Pages.Features.NormalUsers;
 
 public class SignUpModel : PageModel
@@ -47,9 +50,11 @@ public class SignUpModel : PageModel
     public bool hide = false;
 
     private readonly EdgeDBClient _edgeDbClient;
-    public SignUpModel(EdgeDBClient edgeDbClient)
+    private readonly EmailSettings _emailSettings;
+    public SignUpModel(EdgeDBClient edgeDbClient, IOptions<EmailSettings> emailSettings)
     {
         _edgeDbClient = edgeDbClient;
+        _emailSettings = emailSettings.Value;
     }
     public async Task<IActionResult> OnPostAsync()
     {
@@ -76,6 +81,23 @@ public class SignUpModel : PageModel
                 { "password", hashedPassword}
         });
 
+
+        var message = new MimeMessage();
+        message.From.Add(new MailboxAddress("DineDocs", _emailSettings.Email));
+        message.To.Add(new MailboxAddress("dine", restaurantIn.Email));
+        message.Subject = "Confirmation Email";
+        message.Body = new TextPart("plain")
+        {
+            Text = "Thank you for signing up. Your account has been successfully created."
+        };
+
+        using (var client = new SmtpClient())
+        {
+            await client.ConnectAsync(_emailSettings.Host, _emailSettings.Port, SecureSocketOptions.StartTls);
+            await client.AuthenticateAsync(_emailSettings.Email, _emailSettings.Password);
+            await client.SendAsync(message);
+            await client.DisconnectAsync(true);
+        }
         return Page();
     }
   
