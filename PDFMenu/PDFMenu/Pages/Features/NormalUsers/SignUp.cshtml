@@ -154,7 +154,7 @@ function getCitiesForCountry(country) {
     "Comoros": ["Moroni", "Moutsamoudou", "Fomboni"],
     "Democratic Republic of the Congo": ["Kinshasa", "Lubumbashi", "Mbuji-Mayi"],
     "Djibouti": ["Djibouti City", "Ali Sabieh", "Tadjoura"],
-    "Egypt": ["Cairo", "Alexandria", "Giza","Aswan","Luxor","Tanta","Banisuef","Hurgada"],
+    "Egypt": ["Cairo", "Alexandria", "Giza","Aswan","Luxor","Tanta","Banisuef","Port Said","Ismailia"],
    
   };
   
@@ -165,7 +165,13 @@ function getDistrictsForCity(country, city) {
   var districtDict = {
    
     "Cairo": ["Nasr City", "Heliopolis", "Maadi","Helwan","Shobra","Sheraton"],
-    
+    "Alexandria": ["Sidi Gaber", "Raml Station", "Borg El Arab", "El Montazah", "El Agami", "El Mandara"],
+    "Giza": ["Dokki", "Agouza", "Mohandessin", "Haram", "Faisal", "Imbaba"],
+    "Ismailia": ["El Qantara Sharq", "El Qantara Gharb", "Abu Suweir", "Fayed", "Tel El Kebir", "El Tal El Kebir"],
+    "Aswan": ["Aswan City", "Daraw", "Kom Ombo", "Nasr El Nuba", "Edfu", "Sebaeya"],
+    "Luxor": ["Luxor City", "Esna", "Armant", "Al Qurna", "Al Bayadiya", "Al Ziniya"],
+    "Port Said": ["Port Said City", "Port Fouad", "El Manakh", "El Dawahi", "El Zohour", "El Sharq"],
+     "Tanta": ["Tanta City", "Kafr El Zayat", "El Mahalla El Kubra", "Samanoud", "Zefta", "El Santa"],
      };
   return districtDict[city] || [];
 }
