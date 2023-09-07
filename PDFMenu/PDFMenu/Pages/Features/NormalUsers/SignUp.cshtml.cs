@@ -58,7 +58,7 @@ public class SignUpModel : PageModel
     }
     public async Task<IActionResult> OnPostAsync()
     {
-       
+
         hide = true;
         var passwordHasher = new PasswordHasher<string>();
         string hashedPassword = passwordHasher.HashPassword(null, restaurantIn.Password);
