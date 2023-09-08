@@ -26,7 +26,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    border :none;
 }
 
 input[type="text"] {
@@ -40,12 +40,11 @@ input[type="text"] {
 }
 
 .search-wrapper {
-    padding: 5px;
+   
     align-items: center;
     justify-content: center;
     background-color: white;
     border: 1px solid darkgrey;
-    border-radius: 20px;
     margin-left: 450px;
     margin-right: 450px;
 }
@@ -88,22 +87,24 @@ input[type="text"] {
     margin-right: 200px;
   
 }
-button[type="submit"] {
-  background-color:transparent; 
-     border: none;
-     color : white;
+.btn-signup {
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    color: white;
 }
 .btn-login {
+    margin-top: 10px;
     background-color: #2a2c41;
     color: white;
     border-radius: 15%;
 }
-
-
-.no-border .e-input-group-icon {
+button {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: transparent;
     border: none;
+    color: grey;
 }
-
-.no-border .e-input-wrapper {
-    background-color: red; /* Replace with your desired background color */
-}   

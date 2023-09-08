@@ -25,8 +25,6 @@ namespace PDFMenu.Pages.Features.Admins
                         if (returned != null)
                         {
                             MenuUploads = returned.menu_uploads;
-                            Console.WriteLine(MenuUploads[0].menu_pdf);
-                            Console.WriteLine(MenuUploads[0].menu_upload_date);
                             return Page();
                         }
                         else
