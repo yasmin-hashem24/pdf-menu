@@ -9,6 +9,8 @@ public class IndexModel : PageModel
     private readonly EdgeDBClient _edgeDbClient;
 
     public List<RestaurantGot> TopRatedRestaurants { get; set; }
+    public List<RestaurantGot> RestaurantsForSearch { get; set; }
+
     public IndexModel(EdgeDBClient edgeDbClient)
     {
         _edgeDbClient = edgeDbClient;
@@ -23,6 +25,11 @@ public class IndexModel : PageModel
             var result = await _edgeDbClient.QueryAsync<RestaurantGot>(query);
             TopRatedRestaurants = result.ToList();
 
+
+        var query1 = "SELECT restaurant {email, restaurant, phone_number, rating,cover_photo,main_photo} ";
+
+        var result1 = await _edgeDbClient.QueryAsync<RestaurantGot>(query);
+        RestaurantsForSearch = result1.ToList();
         return Page();
     }
     public IActionResult OnPostLogIn()
@@ -36,4 +43,5 @@ public class IndexModel : PageModel
         return RedirectToPage("Features/NormalUsers/SignUp");
     }
 
+   
 }

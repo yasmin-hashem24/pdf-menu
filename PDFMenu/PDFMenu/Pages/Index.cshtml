@@ -2,10 +2,14 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+   
 }
-
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, Syncfusion.EJ2
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
  <link rel="stylesheet" href="~/css/NormalUSers/Index.css" />
+  <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/20.2.43/fluent.css" />
+ <script src="https://cdn.syncfusion.com/ej2/20.2.43/dist/ej2.min.js"></script>
  <header>
  <img src="~/Images/logo.png" alt="Logo" width="100" height="60" class="float-start">
  <div class="DineDocs">
@@ -24,15 +28,18 @@
 <div class="Announce">
     <p>Discover Delicious Delights: Your Ultimate Menus Exploration App </p>
     </div>
+  
+    <div class="search-wrapper">
+    <form id="searchForm" method="get">
+        <ejs-autocomplete id="autocomplete_example" filterType="StartsWith" highlight="true" dataSource="@Model.RestaurantsForSearch" placeholder="Search using tags, restaurant name, district ...." popupHeight="400px" popupWidth="250px">
+            <e-autocomplete-fields value="restaurant"></e-autocomplete-fields>
+        </ejs-autocomplete>
 
-        <div class="search-wrapper">
-        <form method="get">
-        <input type="text" id="SearchTerm" name="SearchTerm" placeholder="Search using tags , restaurant name, district ....">
         <button type="submit">
-            <img src="~/Images/search.png" alt="Search" width= "40" height= "40">
-          </button>
-        </form>
-        </div>
+            <img src="~/Images/search.png" alt="Search" width="40" height="40">
+        </button>
+    </form>
+</div>
   <div class="Announce">
     <p>Top Rated for the month  </p>
     </div>
@@ -54,4 +61,14 @@
     </div>
   }
 </div>
+  <ejs-scripts></ejs-scripts>
 
+  <script>
+    document.getElementById("searchForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        var chosenOption = document.getElementById("autocomplete_example").value;
+        var url = "Features/NormalUsers/RestaurantPage/" + encodeURIComponent(chosenOption);
+        window.location.href = url;
+    });
+</script>
