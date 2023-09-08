@@ -13,9 +13,17 @@
         </div>
   </header>
 
+
+   <div class="container">
+       <h1>History</h1>
+        <div class="container1" >
+
+
+            
   <table>
     <tr>
-        <th>Name</th>
+        <th>Menu Name</th>
+        <th>Link</th>
         <th>Date</th>
     </tr>
 
@@ -23,9 +31,13 @@
    @foreach (var history in @Model.MenuUploads)
     {
         <tr>
+            <td>@history.menu_pdf</td>
             <td><a href="/Features/NormalUsers/PDFMenu/@history.menu_pdf">View PDF Menu</a></td>
             <td>@history.menu_upload_date</td>
         </tr>
     }
 
 </table>
+
+            </div>
+            </div>
