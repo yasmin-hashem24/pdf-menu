@@ -61,7 +61,11 @@ public class AdminPageModel : PageModel
                     UPDATE restaurant
                     FILTER restaurant.email = <str>$email
                     SET {
-                        menu_upload_date := <datetime>$menu_upload_date,
+                         menu_uploads += (INSERT history {
+                            menu_upload_date := <datetime>$menu_upload_date,
+                            menu_pdf := <str>$menu_pdf
+                        }),
+                         menu_upload_date := <datetime>$menu_upload_date,
                         menu_pdf := <str>$menu_pdf
                     
                     }";

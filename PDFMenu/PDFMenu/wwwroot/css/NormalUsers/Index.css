@@ -98,3 +98,12 @@ button[type="submit"] {
     color: white;
     border-radius: 15%;
 }
+
+
+.no-border .e-input-group-icon {
+    border: none;
+}
+
+.no-border .e-input-wrapper {
+    background-color: red; /* Replace with your desired background color */
+}   

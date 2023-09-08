@@ -30,7 +30,9 @@ type restaurant {
   cover_photo: str;
   main_photo: str;
   rating : int16;
- 
+ multi menu_uploads: history
 }
-
-  }
+type history {
+     menu_pdf: str;
+     menu_upload_date:datetime ;
+  }}

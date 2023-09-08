@@ -17,3 +17,10 @@ body {
     margin-bottom: 60px;
     background-color: #f4f4f8;
 }
+.no-border .e-input-group-icon {
+    border: none;
+}
+
+.no-border .e-input-wrapper {
+    background-color: #F0F0F0; /* Replace with your desired background color */
+}

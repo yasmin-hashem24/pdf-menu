@@ -26,5 +26,13 @@
         public string menu_pdf { get; set; } = " ";
         public string opening_hours { get; set; } = " ";
         public DateTime menu_upload_date { get; set; }
+
+        public List<history> menu_uploads { get; set; }
+    }
+
+    public class history
+    {
+        public string menu_pdf { get; set; } = " ";
+        public DateTime menu_upload_date { get; set; }
     }
 }
