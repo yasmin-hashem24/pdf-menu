@@ -1,31 +1,79 @@
 ﻿.separator {
-    height: 40px;
+    height: 10px;
 }
-
 header {
     background-color: #fdbf50;
     color: white;
-    padding: 10px;
+    padding: 5px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+   
 }
 
+    .header-right {
+    display: flex;
+    gap: 20px; /* Adjust the gap between the links as needed */
+    margin-right: 70px;
+}
+
+.header-button {
+    color: white;
+    text-decoration: none;
+    font-size: x-large;
+    position: relative;
+}
+
+    .header-button::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 100%;
+        width: 2px;
+        background-color: rgba(255, 255, 255, 0.3); /* Adjust the opacity as needed */
+    }
 .DineDocs {
     white-space: normal;
     text-align: left;
     word-break: break-all;
     font-weight: bold;
-    font-size: x-large;
-    margin-top: 10px;
+    font-size: xx-large;
+    margin-top: 6px;
     color: #2a2c41;
+    display: inline-block;
 }
 
 .full-width-img {
     width: 100%;
-    max-height: 300px;
-    margin-top :70px;
+    max-height: 200px;
+    margin-top :30px;
+}
+.col-md.name {
+    /* Add styles for the opening hours div */
+   
 }
 
+.opened {
+    margin-top:20px;
+    font-size: 70%;
+    color :forestgreen;
+    height: 40px;
+    max-width: fit-content;
+    padding:10px;
+   
+}
+
+.closed {
+  
+    margin-top: 20px;
+    font-size: 70%;
+    color: red;
+    height: 40px;
+    max-width: fit-content;
+    padding: 10px;
+}
 .rating {
     margin-top: 15px;
     color: #fdbf50;
@@ -33,17 +81,19 @@ header {
 }
 
 .name {
-    font-size: 60px;
+    font-size: 30px;
     font-style: initial;
     color: #2a2c41;
     max-width: 900px;
 }
 
-.pic {
-    margin-left: 60px;
-    max-width: 100%;
+.pic1 {
+    font-size: 35px;
 }
-
+.pic {
+    font-size: 60px;
+    margin-left : 20px;
+}
 .tag {
     opacity: 0.5;
     font-size: 50%;
@@ -51,40 +101,40 @@ header {
 }
 
 a {
-    margin-left: 30px;
+    padding: 15px;
     color: #fdbf50;
     font-style: normal;
-    font-size: 70px;
+    font-size: 40px;
     text-decoration:none;
 }
 
 .date-icon {
-    margin-left: 60px;
-    font-size: 30px;
+   
+    font-size: 25px;
     color: #2a2c41;
 }
 
 .date-text {
     margin-top: 10px;
     margin-left: 30px;
-    font-size: 30px;
+    font-size: 17px;
     color: #2a2c41;
 }
 
 .add-text {
     margin-top: 10px;
     margin-left: 10px;
-    font-size: 30px;
+    font-size: 20px;
     color: #fdbf50;
     font-style: italic;
    
 }
 
 .contact {
-    margin-left: 60px;
+    
     color: #fdbf50;
     font-style: normal;
-    font-size: 70px;
+    font-size: 40px;
     font-weight: bold;
 }
 
@@ -100,3 +150,165 @@ select {
     margin-right: 30px;
 }
 
+.rounded-lg {
+    border-radius: 20px;
+    background-color: #F0F0F0;
+    height: 400px;
+    padding: 20px;
+}
+.col-md-4
+{
+    padding:50px;
+}
+
+.bluee {
+    border-radius: 20px;
+    background-color: #2a2c41;
+    height: 410px;
+    padding: 5px;
+}
+
+@media (max-width: 767px) {
+    .col-md-4 {
+        flex-basis: 80%;
+        max-width: 30%;
+        height: 160px;
+        margin: 0px;
+        padding: 12px;
+    }
+
+    .rounded-lg {
+        height: 160px;
+    }
+
+    .bluee {
+        height: 163px;
+        padding: 2px;
+        margin: 0;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+    .tag {
+        font-size: 30%;
+        margin:1px;
+    }
+
+    .rating {
+        font-size: 30%;
+        margin: 1px;
+        padding:0px;
+    }
+
+    .date-icon {
+        font-size: 7px;
+    }
+
+    .date-text {
+        font-size: 6px;
+    }
+
+    .add-text {
+        font-size: 6px;
+    }
+
+    .pic {
+        font-size: 10px;
+        margin-left: 5px;
+    }
+
+    .pic1 {
+        font-size: 6px;
+    }
+
+    .contact {
+        font-size: 12px;
+    }
+
+    .col-md-2,
+    .col-md-5 {
+        flex: 0 0 50%;
+        max-width: 30%;
+    }
+
+    select {
+        font-size: 7px;
+        padding: 2px;
+    }
+
+    a {
+        padding: 4px;
+        color: #fdbf50;
+        font-style: normal;
+        font-size: 10px;
+        text-decoration: none;
+    }
+
+    .row {
+        justify-content: space-between;
+    }
+
+    .date-icon {
+        margin: 3px;
+    }
+
+    .date-text {
+        margin: 3px;
+    }
+
+    .add-text {
+        margin: 3px;
+    }
+    .label {
+        font-size: 15px;
+        margin-left: 3px;
+    }
+    header {
+        background-color: #fdbf50;
+        color: white;
+        padding: 5px;
+        display: flex;
+        flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-right {
+        display: flex;
+        gap: 10px; /* Adjust the gap between the links as needed */
+    }
+
+    .header-button {
+        color: white;
+        text-decoration: none;
+        font-size: medium; /* Adjust the font size as needed */
+        position: relative;
+    }
+
+        .header-button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -10px; /* Adjust the position of the line as needed */
+            height: 100%;
+            width: 2px;
+            background-color: rgba(255, 255, 255, 0.3); /* Adjust the opacity as needed */
+        }
+
+    .DineDocs {
+        white-space: normal;
+        text-align: left;
+        word-break: break-all;
+        font-weight: bold;
+        font-size: large; /* Adjust the font size as needed */
+        margin-top: 6px;
+        color: #2a2c41;
+        display: inline-block;
+    }
+    .header-logo {
+        width: 45px; /* Adjust the size for smaller screens */
+        height: 40px; /* Adjust the size for smaller screens */
+    }
+}

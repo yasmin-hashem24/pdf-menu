@@ -1,18 +1,52 @@
 ﻿header {
     background-color: #fdbf50;
     color: white;
-    padding: 10px;
+    padding: 5px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
+.header-right {
+    display: flex;
+    gap: 20px; /* Adjust the gap between the links as needed */
+    margin-right: 70px;
+
+}
+
+.header-button {
+    color: white;
+    text-decoration: none;
+    font-size: x-large;
+    position: relative;
+}
+    .header-button::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 100%;
+        width: 2px;
+        background-color: rgba(255, 255, 255, 0.3); /* Adjust the opacity as needed */
+    }
+
+button {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: transparent;
+    border: none;
+    color: grey;
+}
 .DineDocs {
     white-space: normal;
     text-align: left;
     word-break: break-all;
     font-weight: bold;
     font-size: xx-large;
-    margin-top: 10px;
+    margin-top: 6px;
     color: #2a2c41;
     display: inline-block;
 }
@@ -122,3 +156,6 @@ input[type="submit"] {
     margin-right: auto;
 }
 
+@media (max-width: 767px) {
+   
+}
