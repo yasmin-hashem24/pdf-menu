@@ -21,9 +21,7 @@ public class LoginModel : PageModel
         string email = res.Email;
         string password = res.Password;
 
-        Console.WriteLine(email);
-        Console.WriteLine(password);
-
+    
         var query = "SELECT restaurant {email, password,restaurant ,phone_number,cover_photo,facebook,instagram,twitter,country,address,city,district,rating} " +
                        "FILTER restaurant.email = <str>$email AND restaurant.password = <str>$password LIMIT 1;";
 

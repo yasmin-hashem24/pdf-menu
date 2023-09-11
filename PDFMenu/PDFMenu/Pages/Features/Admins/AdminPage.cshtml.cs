@@ -46,7 +46,7 @@ public class AdminPageModel : PageModel
     public async Task<IActionResult> OnPostAsync()
     {
         var email = Request.Form.FirstOrDefault(x => x.Key == "email").Value.FirstOrDefault(); ;
-        Console.WriteLine(email);
+       
         if (File != null && File.Length > 0)
         {
 

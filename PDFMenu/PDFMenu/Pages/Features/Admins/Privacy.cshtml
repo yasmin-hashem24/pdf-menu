@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{emaile}"
 @model PDFMenu.Pages.Features.Admins.PrivacyModel
 @{
 }
@@ -28,6 +28,7 @@
 
          <div class="form-group">
              <form method="post" asp-page-handler="UpdatePassword">
+                   <input type="hidden" name="email" value="@Model.RestaurantGot.email">
                   <button type="submit">Update Password</button>
              </form>
           </div>
