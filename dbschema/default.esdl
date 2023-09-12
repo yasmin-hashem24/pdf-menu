@@ -4,10 +4,6 @@ type user{
    required name: str;
    required email: str;
    required phone_number: str;
-   required resturant_name: restaurant;
-   required password: str;
-   #should the password be removed ?? where shall it be ?
-   required role: str; #owner or contributor
 
 }
 type restaurant {
@@ -30,7 +26,10 @@ type restaurant {
   cover_photo: str;
   main_photo: str;
   rating : int16;
- multi menu_uploads: history
+ multi menu_uploads: history;
+ multi users: user{
+  on target delete allow;
+};
 }
 type history {
      menu_pdf: str;

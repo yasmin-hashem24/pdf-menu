@@ -32,7 +32,7 @@ namespace PDFMenu.Pages.Features.Admins
 
                             return RedirectToPage("/Admins/AdminPage");
                         }
-                    }
+        }
 
     }
 }

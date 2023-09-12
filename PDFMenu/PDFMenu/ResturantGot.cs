@@ -28,11 +28,21 @@
         public DateTime menu_upload_date { get; set; }
 
         public List<history> menu_uploads { get; set; }
+
+        public List<user> users { get; set; }
     }
 
     public class history
     {
         public string menu_pdf { get; set; } = " ";
         public DateTime menu_upload_date { get; set; }
+    }
+
+    public class user
+    {
+        public string name { get; set; } = " ";
+        public string email { get; set; } = " ";
+
+        public string phone_number { get; set; } = " ";
     }
 }

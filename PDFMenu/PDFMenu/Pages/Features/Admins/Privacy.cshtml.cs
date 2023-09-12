@@ -49,19 +49,19 @@ public class PrivacyModel : PageModel
     public IActionResult OnPostUpdatePassword()
     {
         var email = Request.Form.FirstOrDefault(x => x.Key == "email").Value.FirstOrDefault();
-        Console.WriteLine(email);
         return RedirectToPage("UpdatePassword", new { emaile = email });
     }
 
 
     public IActionResult OnPostAddUsers()
     {
-
-        return RedirectToPage("AddUsers");
+        var email = Request.Form.FirstOrDefault(x => x.Key == "email").Value.FirstOrDefault();
+        return RedirectToPage("AddUsers", new { emaile = email });
     }
 
     public IActionResult OnPostRemoveUsers()
     {
-        return RedirectToPage("RemoveUsers");
+        var email = Request.Form.FirstOrDefault(x => x.Key == "email").Value.FirstOrDefault();
+        return RedirectToPage("RemoveUsers", new { emaile = email });
     }
 }
