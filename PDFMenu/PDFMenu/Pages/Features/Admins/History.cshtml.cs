@@ -13,8 +13,10 @@ namespace PDFMenu.Pages.Features.Admins
         {
             _edgeDbClient = edgeDbClient;
         }
-        public async Task<IActionResult> OnGetAsync(string email)
+        public async Task<IActionResult> OnGetAsync()
             {
+
+            string email = HttpContext.Session.GetString("Email");
             var query = @"SELECT restaurant { menu_uploads :{menu_pdf, menu_upload_date},} FILTER restaurant.email = <str>$email LIMIT 1;";
 
             var returned = await _edgeDbClient.QuerySingleAsync<RestaurantGot>(query, new Dictionary<string, object>

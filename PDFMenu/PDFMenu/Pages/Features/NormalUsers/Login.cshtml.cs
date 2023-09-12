@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using EdgeDB;
+using Microsoft.AspNetCore.Session;
 namespace PDFMenu.Pages.Features.NormalUsers;
 
 public class LoginModel : PageModel
@@ -19,6 +20,9 @@ public class LoginModel : PageModel
     public async Task<IActionResult> OnPostAsync()
     {
         string email = res.Email;
+       
+        HttpContext.Session.SetString("Email", email);
+
         string password = res.Password;
 
     

@@ -18,8 +18,9 @@ public class AddUsersModel : PageModel
     {
         _edgeDbClient = edgeDbClient;
     }
-    public async Task<IActionResult> OnGetAsync(string emaile)
+    public async Task<IActionResult> OnGetAsync()
     {
+        string emaile = HttpContext.Session.GetString("Email");
         var query = "SELECT restaurant {email} " +
                       "FILTER restaurant.email = <str>$email LIMIT 1;";
 

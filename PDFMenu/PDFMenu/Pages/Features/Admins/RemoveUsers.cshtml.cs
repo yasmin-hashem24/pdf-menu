@@ -16,8 +16,10 @@ public class RemoveUsersModel : PageModel
         _edgeDbClient = edgeDbClient;
     }
 
-    public async Task<IActionResult> OnGetAsync(string emaile)
+    public async Task<IActionResult> OnGetAsync()
     {
+
+        string emaile = HttpContext.Session.GetString("Email");
         var query = @"SELECT restaurant { users :{name, email,phone_number},} FILTER restaurant.email = <str>$email LIMIT 1;";
 
         var returned = await _edgeDbClient.QuerySingleAsync<RestaurantGot>(query, new Dictionary<string, object>

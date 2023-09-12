@@ -159,3 +159,151 @@ input[type="submit"] {
 @media (max-width: 767px) {
    
 }
+
+@media (max-width: 767px) {
+    .col-md-4 {
+        flex-basis: 80%;
+        max-width: 30%;
+        height: 160px;
+        margin: 0px;
+        padding: 12px;
+    }
+
+    .rounded-lg {
+        height: 160px;
+    }
+
+    .bluee {
+        height: 163px;
+        padding: 2px;
+        margin: 0;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+    .tag {
+        font-size: 30%;
+        margin: 1px;
+    }
+
+    .rating {
+        font-size: 30%;
+        margin: 1px;
+        padding: 0px;
+    }
+
+    .date-icon {
+        font-size: 7px;
+    }
+
+    .date-text {
+        font-size: 6px;
+    }
+
+    .add-text {
+        font-size: 6px;
+    }
+
+    .pic {
+        font-size: 10px;
+        margin-left: 5px;
+    }
+
+    .pic1 {
+        font-size: 6px;
+    }
+
+    .contact {
+        font-size: 12px;
+    }
+
+    .col-md-2,
+    .col-md-5 {
+        flex: 0 0 50%;
+        max-width: 30%;
+    }
+
+    select {
+        font-size: 4px;
+        padding: 1px;
+    }
+
+    a {
+        padding: 4px;
+        color: #fdbf50;
+        font-style: normal;
+        font-size: 10px;
+        text-decoration: none;
+    }
+
+    .row {
+        justify-content: space-between;
+    }
+
+    .date-icon {
+        margin: 3px;
+    }
+
+    .date-text {
+        margin: 3px;
+    }
+
+    .add-text {
+        margin: 3px;
+    }
+
+    .label {
+        font-size: 15px;
+        margin-left: 3px;
+    }
+
+    header {
+        background-color: #fdbf50;
+        color: white;
+        padding: 3px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-right {
+        display: flex;
+        gap: 4px;
+    }
+
+    .header-button {
+        color: white;
+        text-decoration: none;
+        font-size: smaller;
+        position: relative;
+    }
+
+        .header-button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -10px;
+            height: 50%;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+    .DineDocs {
+        white-space: normal;
+        text-align: left;
+        word-break: break-all;
+        font-weight: bold;
+        font-size: small;
+        margin-top: 6px;
+        color: #2a2c41;
+        display: inline-block;
+    }
+
+    .header-logo {
+        width: 45px;
+        height: 40px;
+    }
+}

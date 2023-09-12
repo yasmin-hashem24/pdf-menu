@@ -21,8 +21,10 @@ public class UpdatePasswordModel : PageModel
     {
         _edgeDbClient = edgeDbClient;
     }
-    public async Task<IActionResult> OnGetAsync(string emaile)
+    public async Task<IActionResult> OnGetAsync()
     {
+
+        string emaile = HttpContext.Session.GetString("Email");
         var query = "SELECT restaurant { email,tags, password} " +
                       "FILTER restaurant.email = <str>$email LIMIT 1;";
 
@@ -48,7 +50,7 @@ public class UpdatePasswordModel : PageModel
     public async Task<IActionResult> OnPostAsync()
     {
         hide = true;
-        var email = Request.Form.FirstOrDefault(x => x.Key == "email").Value.FirstOrDefault();
+        var email = HttpContext.Session.GetString("Email");
         string password = CurrentPassword;
         string newpassword = NewPassword;
         var query = @"

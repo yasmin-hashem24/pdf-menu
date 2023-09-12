@@ -15,9 +15,9 @@ public class PrivacyModel : PageModel
         _edgeDbClient = edgeDbClient;
     }
 
-    public async Task<IActionResult> OnGetAsync(string emaile)
+    public async Task<IActionResult> OnGetAsync()
     {
-
+        string emaile = HttpContext.Session.GetString("Email");
         var query = "SELECT restaurant { email,tags, password} " +
                       "FILTER restaurant.email = <str>$email LIMIT 1;";
 
@@ -49,19 +49,19 @@ public class PrivacyModel : PageModel
     public IActionResult OnPostUpdatePassword()
     {
         var email = Request.Form.FirstOrDefault(x => x.Key == "email").Value.FirstOrDefault();
-        return RedirectToPage("UpdatePassword", new { emaile = email });
+        return RedirectToPage("UpdatePassword");
     }
 
 
     public IActionResult OnPostAddUsers()
     {
         var email = Request.Form.FirstOrDefault(x => x.Key == "email").Value.FirstOrDefault();
-        return RedirectToPage("AddUsers", new { emaile = email });
+        return RedirectToPage("AddUsers");
     }
 
     public IActionResult OnPostRemoveUsers()
     {
         var email = Request.Form.FirstOrDefault(x => x.Key == "email").Value.FirstOrDefault();
-        return RedirectToPage("RemoveUsers", new { emaile = email });
+        return RedirectToPage("RemoveUsers");
     }
 }

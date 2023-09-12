@@ -192,13 +192,13 @@ select {
 
     .tag {
         font-size: 30%;
-        margin:1px;
+        margin: 1px;
     }
 
     .rating {
         font-size: 30%;
         margin: 1px;
-        padding:0px;
+        padding: 0px;
     }
 
     .date-icon {
@@ -233,8 +233,8 @@ select {
     }
 
     select {
-        font-size: 7px;
-        padding: 2px;
+        font-size: 4px;
+        padding: 1px;
     }
 
     a {
@@ -260,29 +260,31 @@ select {
     .add-text {
         margin: 3px;
     }
+
     .label {
         font-size: 15px;
         margin-left: 3px;
     }
+
     header {
         background-color: #fdbf50;
         color: white;
-        padding: 5px;
+        padding: 3px;
         display: flex;
-        flex-wrap: wrap; 
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
     }
 
     .header-right {
         display: flex;
-        gap: 10px; 
+        gap: 4px;
     }
 
     .header-button {
         color: white;
         text-decoration: none;
-        font-size: medium; 
+        font-size: smaller;
         position: relative;
     }
 
@@ -291,9 +293,9 @@ select {
             position: absolute;
             top: 0;
             right: -10px;
-            height: 100%;
-            width: 2px;
-            background-color: rgba(255, 255, 255, 0.3); 
+            height: 50%;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.3);
         }
 
     .DineDocs {
@@ -301,13 +303,14 @@ select {
         text-align: left;
         word-break: break-all;
         font-weight: bold;
-        font-size: large;
+        font-size: small;
         margin-top: 6px;
         color: #2a2c41;
         display: inline-block;
     }
+
     .header-logo {
-        width: 45px; 
-        height: 40px; 
+        width: 45px;
+        height: 40px;
     }
 }
