@@ -111,7 +111,13 @@
             margin-right: 10px;
         }
 
-
+a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: white;
+}
 @media (max-width: 767px) {
     .col-md-4 {
         flex-basis: 80%;

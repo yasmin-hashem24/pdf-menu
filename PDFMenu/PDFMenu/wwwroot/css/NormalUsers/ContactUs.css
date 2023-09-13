@@ -6,11 +6,14 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .logo {
     border-radius: 30%;
-    margin-right:20px;
-    margin-left : 30px;
+    margin-right: 20px;
+    margin-left: 30px;
+    margin-top: 10px;
 }
+
 .header-right {
     display: flex;
     gap: 20px; /* Adjust the gap between the links as needed */
@@ -122,4 +125,71 @@ a {
     font-size: 36px;
     margin-bottom: 20px;
     color:white;
+}
+
+@media (max-width: 767px) {
+  
+
+    .rounded-lg {
+        height: 160px;
+    }
+
+
+
+    a {
+        margin-left: 20px;
+        text-decoration: none;
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .row {
+        justify-content: space-between;
+    }
+
+
+
+    header {
+        background-color: transparent;
+        color: white;
+        padding: 1px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-right {
+        display: flex;
+        gap: 2px;
+    }
+
+    .header-button {
+        color: white;
+        text-decoration: none;
+        font-size: xx-small;
+        position: relative;
+    }
+
+
+
+    .DineDocs {
+        white-space: normal;
+        text-align: left;
+        font-weight: normal;
+        font-size: smaller;
+        margin-top: 12px;
+        color: white;
+        display: inline-block;
+        margin-left: 0px;
+    }
+
+    .logo {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+    }
+
+   
 }

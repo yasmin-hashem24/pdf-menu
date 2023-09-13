@@ -33,13 +33,14 @@ header {
         width: 2px;
         background-color: rgba(255, 255, 255, 0.3); /* Adjust the opacity as needed */
     }
+
 .DineDocs {
     white-space: normal;
     text-align: left;
     word-break: break-all;
     font-weight: bold;
-    font-size: xx-large;
-    margin-top: 6px;
+    font-size: x-large;
+    margin-top: 10px;
     color: #2a2c41;
     display: inline-block;
 }
