@@ -13,10 +13,10 @@
   </div>
    <select onchange="if (this.value == '/page2') {showPopup()} else {location = this.value;}">
     <option value=""></option>
-    <option value="/page1">Settings</option>
+    <option value="/Features/Admins/Settings">Settings</option>
     <option value="/page2">Upload Menu</option>
-    <option value="/Features/Admins/Privacy/@Model.RestaurantGot.email">Privacy</option>
-     <option value="/Features/Admins/History/@Model.RestaurantGot.email">History</option>
+    <option value="/Features/Admins/Privacy">Privacy</option>
+     <option value="/Features/Admins/History">History</option>
     <option value="/index">Logout</option>
 </select>
   <div class="header-right">
@@ -115,6 +115,7 @@
                         <a href=@Model.RestaurantGot.facebook target="_blank"><i class="fab fa-facebook"></i></a>
                         <a href=@Model.RestaurantGot.instagram target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href=@Model.RestaurantGot.twitter target="_blank"><i class="fab fa-twitter"></i></a>
+                      <a href="mailto:{@Model.RestaurantGot.email}" target="_blank"><i class="fa fa-envelope"></i></a>
 
                      </div>
                </div>

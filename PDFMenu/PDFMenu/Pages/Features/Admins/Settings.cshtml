@@ -2,3 +2,136 @@
 @model PDFMenu.Pages.Features.Admins.SettingsModel
 @{
 }
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+ <link rel="stylesheet" href="~/css/Admins/Settings.css" />
+<header>
+  <div class="header-left">
+    <img src="~/Images/logo.png" alt="Logo" width="100" height="60" class="float-start">
+    <div class="DineDocs">
+      <p>DineDocs</p>
+    </div>
+  </div>
+  
+  <div class="header-right">
+    <a href="/Index" class="header-button">Home</a>
+    <a href="ContactUs" class="header-button">Contact Us</a>
+    <a href="About" class="header-button">About</a>
+  </div>
+</header>
+
+  <div class="container">
+    <h2>Settings</h2>
+     <div class="separator"></div>
+    <form method="post">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="Restaurant">Restaurant</label>
+          <input type="text" id="Restaurant" name="Restaurant" asp-for="Restaurant">
+    
+        </div>
+        <div class="form-group">
+          <label for="PhoneNumber">PhoneNumber</label>
+          <input type="text" id="PhoneNumber" name="PhoneNumber" asp-for="PhoneNumber">
+        </div>
+      </div>
+   
+
+      <div class="separator"></div>
+
+      <div class="form-row">
+        <div class="form-group">
+         <label for="Instagram">Instagram</label>
+          <input type="text" id="Instagram" name="Instagram" asp-for="Instagram">
+        </div>
+        <div class="form-group">
+          <label for="Facebook">Facebook</label>
+          <input type="text" id="Facebook" name="Facebook"asp-for="Facebook">
+        </div>
+      </div>
+      <div class="form-row">
+
+
+           <div class="form-group">
+          <label for="Twitter">Twitter</label>
+          <input type="text" id="Twitter" name="Twitter" asp-for="Twitter">
+        </div>
+
+        <div class="form-group">
+          <label for="Tags">Tags</label>
+          <input type="text" id="Tags" name="Tags">
+        </div>
+
+       
+      </div>
+      <div class="separator"></div>
+
+      <div class="form-row">
+          <div class="form-group">
+          <label for="OpeningHours">Opening Hours</label>
+          <input type="text" id="OpeningHours" name="OpeningHours" asp-for="OpeningHours">
+        </div>
+
+        <div class="form-group">
+          <label for="Address">Address</label>
+          <input type="text" id="Address" name="Address" asp-for="Address">
+        </div>
+      </div>
+
+      
+      <div class="separator"></div>
+      <input type="submit" value="Edit">
+    </form>
+
+    <div class="separator"></div>
+        <div class="form-row">
+
+
+           <div class="form-group">
+          <button class="uploadbutton" onclick="showPopup()">Cover Photo</button>
+        </div>
+
+        <div class="form-group">
+         <button class="uploadbutton" onclick="showPopup1()">Main Photo</button>
+        </div>
+
+       
+      </div>
+
+ <div id="popup" class="popup hidden">
+      <div class="popup-content">
+    <form method="post"asp-page-handler="Cover" enctype="multipart/form-data">
+        <input type="file" name="file" class="file-upload"><br><br>
+        <input type="submit" value="Upload" class="file-upload">
+    </form>
+    <button class="close-btn" onclick="hidePopup()">X</button>
+</div>
+</div>
+<div id="popup1" class="popup hidden">
+      <div class="popup-content">
+    <form method="post"asp-page-handler="Main" enctype="multipart/form-data">
+        <input type="file" name="file" class="file-upload"><br><br>
+        <input type="submit" value="Upload" class="file-upload">
+    </form>
+    <button class="close-btn" onclick="hidePopup1()">X</button>
+</div>
+</div>
+</div>
+
+<script>
+function showPopup() {
+    document.getElementById("popup").classList.remove("hidden");
+}
+
+function hidePopup() {
+    document.getElementById("popup").classList.add("hidden");
+}
+
+function showPopup1() {
+    document.getElementById("popup1").classList.remove("hidden");
+}
+
+function hidePopup1() {
+    document.getElementById("popup1").classList.add("hidden");
+}
+</script>

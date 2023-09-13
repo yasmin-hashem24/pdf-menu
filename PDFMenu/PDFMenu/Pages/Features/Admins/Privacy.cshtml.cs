@@ -48,20 +48,20 @@ public class PrivacyModel : PageModel
 
     public IActionResult OnPostUpdatePassword()
     {
-        var email = Request.Form.FirstOrDefault(x => x.Key == "email").Value.FirstOrDefault();
+       
         return RedirectToPage("UpdatePassword");
     }
 
 
     public IActionResult OnPostAddUsers()
     {
-        var email = Request.Form.FirstOrDefault(x => x.Key == "email").Value.FirstOrDefault();
+       
         return RedirectToPage("AddUsers");
     }
 
     public IActionResult OnPostRemoveUsers()
     {
-        var email = Request.Form.FirstOrDefault(x => x.Key == "email").Value.FirstOrDefault();
+        
         return RedirectToPage("RemoveUsers");
     }
 }
