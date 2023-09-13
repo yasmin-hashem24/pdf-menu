@@ -41,7 +41,7 @@
     <form id="searchForm" method="get">
          <img src="~/Images/restaurant.png" alt="Search" width="40" height="40" style="margin-right: 5px; margin-left: 5px;filter: grayscale(100%)">
 
-         <ejs-autocomplete id="autocomplete_example" filterType="StartsWith" highlight="true" dataSource="@Model.RestaurantsForSearch" placeholder="Search using tags, restaurant name, district ...." popupHeight="700px" popupWidth="100%" style="font-weight:500; font-size:larger; height:50px; background-color: white;">
+         <ejs-autocomplete id="autocomplete_example" filterType="StartsWith" highlight="true" dataSource="@Model.RestaurantsForSearch" placeholder="Search for your desired restaurant" popupHeight="700px" popupWidth="100%" style="font-weight:500; font-size:larger; height:50px; background-color: white;">
         <e-autocomplete-fields value="restaurant"></e-autocomplete-fields>
     </ejs-autocomplete>
         <button type="submit">
