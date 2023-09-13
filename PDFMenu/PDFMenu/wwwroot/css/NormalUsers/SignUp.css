@@ -141,17 +141,7 @@ select {
     width: 100%;
     font-weight: bold;
 }
-.uploadbutton {
-    font-size: 16px;
-    padding: 12px;
-    border: 1px solid #f4f4f8;
-    border-radius: 4px;
-    background-color: #f4f4f8;
-    box-sizing: border-box;
-    margin-top: 6px;
-    width: 100%;
-    font-weight: bold;
-}
+
 
 input[type="submit"] {
     padding: 10px;
@@ -166,74 +156,35 @@ input[type="submit"] {
     margin-left: auto;
     margin-right: auto;
 }
-
 @media (max-width: 767px) {
-    .col-md-4 {
-        flex-basis: 80%;
-        max-width: 30%;
-        height: 160px;
-        margin: 0px;
-        padding: 12px;
+    input[type="submit"] {
+        padding: 5px;
+        margin: 10px auto;
+        border-radius: 10px;
+        background-color: #fdbf50;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        display: block;
+        width: 90px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 20%;
+      
     }
 
-    .rounded-lg {
-        height: 160px;
+    .form-group {
+        width: 40%;
     }
 
-    .bluee {
-        height: 163px;
-        padding: 2px;
-        margin: 0;
-    }
-
-    .name {
-        font-size: 20px;
-    }
-
-    .tag {
-        font-size: 30%;
-        margin: 1px;
-    }
-
-    .rating {
-        font-size: 30%;
-        margin: 1px;
-        padding: 0px;
-    }
-
-    .date-icon {
-        font-size: 7px;
-    }
-
-    .date-text {
-        font-size: 6px;
-    }
-
-    .add-text {
-        font-size: 6px;
-    }
-
-    .pic {
-        font-size: 10px;
-        margin-left: 5px;
-    }
-
-    .pic1 {
-        font-size: 6px;
-    }
-
-    .contact {
-        font-size: 12px;
-    }
-
-    .col-md-2,
-    .col-md-5 {
-        flex: 0 0 50%;
-        max-width: 30%;
-    }
 
     select {
-        font-size: 4px;
+        font-size: 10px;
         padding: 1px;
     }
 
@@ -245,24 +196,9 @@ input[type="submit"] {
         text-decoration: none;
     }
 
-    .row {
-        justify-content: space-between;
-    }
-
-    .date-icon {
-        margin: 3px;
-    }
-
-    .date-text {
-        margin: 3px;
-    }
-
-    .add-text {
-        margin: 3px;
-    }
 
     .label {
-        font-size: 15px;
+        font-size: 10px;
         margin-left: 3px;
     }
 
@@ -313,4 +249,24 @@ input[type="submit"] {
         width: 45px;
         height: 40px;
     }
+
+    input[type="text"],
+    input[type=email],
+    input[type=password] {
+        background-color: #2a2c41;
+        border-radius: 10px;
+        border: 1px solid #f4f4f8;
+        padding: 2px;
+        margin-bottom: 3px;
+        width: 100%;
+    }
+   
+    .container {
+        background-color: #2a2c41;
+        width: 90%;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    
 }
