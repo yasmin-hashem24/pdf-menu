@@ -1,12 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+namespace PDFMenu.Pages.Features.NormalUsers;
 
-namespace PDFMenu.Pages.Features.NormalUsers
+public class ContactUsModel : PageModel
 {
-    public class ContactUsModel : PageModel
-    {
-        public void OnGet()
-        {
-        }
-    }
+
 }

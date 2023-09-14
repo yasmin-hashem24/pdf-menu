@@ -10,7 +10,6 @@ namespace PDFMenu.Pages.Features.NormalUsers;
 
 public class SignUpModel : PageModel
 {
-
     [BindProperty]
     public RestaurantInput restaurantIn { get; set; }
 
@@ -36,19 +35,13 @@ public class SignUpModel : PageModel
     "Ethiopia",
     "Gabon",
     "Gambia"
-};
+    };
     [BindProperty]
-    public string[] Cities { get; set; }=
-    new string[] {
-        };
+    public string[] Cities { get; set; }= new string[] {};
 
     [BindProperty]
-    public string[] Districts { get; set; } =
-    new string[] {
-        };
-
+    public string[] Districts { get; set; } = new string[] {};
     public bool hide = false;
-
     private readonly EdgeDBClient _edgeDbClient;
     private readonly EmailSettings _emailSettings;
     public SignUpModel(EdgeDBClient edgeDbClient, IOptions<EmailSettings> emailSettings)
@@ -58,13 +51,10 @@ public class SignUpModel : PageModel
     }
     public async Task<IActionResult> OnPostAsync()
     {
-
         hide = true;
         var passwordHasher = new PasswordHasher<string>();
         string hashedPassword = passwordHasher.HashPassword(null, restaurantIn.Password);
-
-
-            var result = await _edgeDbClient.QueryAsync<RestaurantInput>(
+        var result = await _edgeDbClient.QueryAsync<RestaurantInput>(
         "INSERT restaurant  { email := <str>$email, phone_number := <str>$phone_number, password := <str>$password, restaurant := <str>$restaurant, facebook := <str>$facebook, instagram := <str>$instagram, twitter := <str>$twitter, country := <str>$country, city := <str>$city, district := <str>$district, address := <str>$address }",
         new Dictionary<string, object>
         {
@@ -80,8 +70,6 @@ public class SignUpModel : PageModel
                 { "address", restaurantIn.Address },
                 { "password", hashedPassword}
         });
-
-
         var message = new MimeMessage();
         message.From.Add(new MailboxAddress("DineDocs", _emailSettings.Email));
         message.To.Add(new MailboxAddress("dine", restaurantIn.Email));
@@ -90,7 +78,6 @@ public class SignUpModel : PageModel
         {
             Text = "Thank you for signing up. Your account has been successfully created."
         };
-
         using (var client = new SmtpClient())
         {
             await client.ConnectAsync(_emailSettings.Host, _emailSettings.Port, SecureSocketOptions.StartTls);
@@ -100,6 +87,5 @@ public class SignUpModel : PageModel
         }
         return Page();
     }
-  
 }
 

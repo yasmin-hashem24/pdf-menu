@@ -14,7 +14,6 @@ public class PrivacyModel : PageModel
     {
         _edgeDbClient = edgeDbClient;
     }
-
     public async Task<IActionResult> OnGetAsync()
     {
         string emaile = HttpContext.Session.GetString("Email");
@@ -23,9 +22,9 @@ public class PrivacyModel : PageModel
 
 
         var returned = await _edgeDbClient.QuerySingleAsync<RestaurantGot>(query, new Dictionary<string, object>
-    {
-        { "email", emaile }
-    });
+        {
+            { "email", emaile }
+        });
 
         if (returned != null)
         {
@@ -42,23 +41,17 @@ public class PrivacyModel : PageModel
     }
     public IActionResult OnPostUpdateEmail()
     {
-
         return RedirectToPage("UpdateEmail");
     }
-
     public IActionResult OnPostUpdatePassword()
     {
-       
         return RedirectToPage("UpdatePassword");
     }
-
-
     public IActionResult OnPostAddUsers()
     {
        
         return RedirectToPage("AddUsers");
     }
-
     public IActionResult OnPostRemoveUsers()
     {
         

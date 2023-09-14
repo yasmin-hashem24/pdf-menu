@@ -10,14 +10,10 @@ namespace PDFMenu.Pages.Features.NormalUsers;
 
 public class ResetPasswordModel : PageModel
 {
-    
-
     [BindProperty]
-
     public string Email { get; set; }
 
     public bool hide = false;
-
     private readonly EdgeDBClient _edgeDbClient;
     private readonly EmailSettings _emailSettings;
     public ResetPasswordModel(EdgeDBClient edgeDbClient, IOptions<EmailSettings> emailSettings)
@@ -54,7 +50,7 @@ public class ResetPasswordModel : PageModel
                     
                      { "email",Email }
 
-                });
+        });
         message.Body = new TextPart("plain")
         {
             Text = bodyText
@@ -70,5 +66,4 @@ public class ResetPasswordModel : PageModel
         return Page();
       
     }
-
 }

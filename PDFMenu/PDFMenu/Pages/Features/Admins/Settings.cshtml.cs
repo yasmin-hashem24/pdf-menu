@@ -42,47 +42,41 @@ public class SettingsModel : PageModel
 
     [BindProperty]
     public string[] Countries { get; set; } = new string[] {
-"Algeria",
-"Angola",
-"Benin",
-"Botswana",
-"Burkina Faso",
-"Burundi",
-"Cameroon",
-"Cape Verde",
-"Central African Republic",
-"Chad",
-"Comoros",
-"Democratic Republic of the Congo",
-"Djibouti",
-"Egypt",
-"Equatorial Guinea",
-"Eritrea",
-"Eswatini (formerly Swaziland)",
-"Ethiopia",
-"Gabon",
-"Gambia"
-};
+        "Algeria",
+        "Angola",
+        "Benin",
+        "Botswana",
+        "Burkina Faso",
+        "Burundi",
+        "Cameroon",
+        "Cape Verde",
+        "Central African Republic",
+        "Chad",
+        "Comoros",
+        "Democratic Republic of the Congo",
+        "Djibouti",
+        "Egypt",
+        "Equatorial Guinea",
+        "Eritrea",
+        "Eswatini (formerly Swaziland)",
+        "Ethiopia",
+        "Gabon",
+        "Gambia"
+    };
     [BindProperty]
-    public string[] Cities { get; set; } =
-    new string[] {
-        };
+    public string[] Cities { get; set; } = new string[] {};
 
     [BindProperty]
-    public string[] Districts { get; set; } =
-    new string[] {
-        };
+    public string[] Districts { get; set; } = new string[] {};
 
     public bool hide = false;
 
     private readonly EdgeDBClient _edgeDbClient;
-  
     public SettingsModel(EdgeDBClient edgeDbClient)
     {
         _edgeDbClient = edgeDbClient;
         
     }
-
     public async Task<IActionResult> OnGetAsync()
     {
 
@@ -91,12 +85,11 @@ public class SettingsModel : PageModel
                        "FILTER restaurant.email = <str>$email LIMIT 1;";
 
         var parameters = new Dictionary<string, object>
-            {
+        {
                 { "email", email }
-            };
+        };
 
         var restaurant = await _edgeDbClient.QuerySingleAsync<RestaurantGot>(query, parameters);
-
 
         Facebook = restaurant.facebook;
         Restaurant = restaurant.restaurant;
@@ -108,8 +101,6 @@ public class SettingsModel : PageModel
         District = restaurant.district;
         Twitter = restaurant.twitter;
         OpeningHours = restaurant.opening_hours;
-        Console.WriteLine(Facebook);
-
         return Page();
     }
 
@@ -132,7 +123,7 @@ public class SettingsModel : PageModel
                         opening_hours := <str>$opening_hours
                     }";
         await _edgeDbClient.ExecuteAsync(query, new Dictionary<string, object?>
-                    {
+        {
                         { "address", Address },
                         { "email",email},
                         { "facebook", Facebook },
@@ -141,8 +132,7 @@ public class SettingsModel : PageModel
                         { "twitter", Twitter },
                         { "opening_hours", OpeningHours },
                          { "phone_number", PhoneNumber }
-                    });
-
+        });
         return Page();
     }
     public async Task<IActionResult> OnPostCover()
@@ -159,28 +149,26 @@ public class SettingsModel : PageModel
                     File.CopyTo(fileStream);
                 }
             }
-                var query = @"
+            var query = @"
                             UPDATE restaurant
                             FILTER restaurant.email = <str>$email
                             SET {
                          
                                 cover_photo := <str>$cover_photo
                     
-                            }";
+            }";
 
             await _edgeDbClient.ExecuteAsync(query, new Dictionary<string, object?>
                     {
                         { "email",email },
                         { "cover_photo", File.FileName }
 
-                    });
-
-
+            });
             return Page();
-        }
+    }
 
-        public async Task<IActionResult> OnPostMain()
-        {
+    public async Task<IActionResult> OnPostMain()
+    {
             string email = HttpContext.Session.GetString("Email");
 
             if (File != null && File.Length > 0)
@@ -207,9 +195,9 @@ public class SettingsModel : PageModel
                         { "email",email },
                         { "cover_photo", File.FileName }
 
-                    });
+            });
 
 
             return Page();
-        }
+    }
 }

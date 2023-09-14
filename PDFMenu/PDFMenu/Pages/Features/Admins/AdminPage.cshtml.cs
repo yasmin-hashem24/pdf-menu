@@ -27,9 +27,9 @@ public class AdminPageModel : PageModel
 
       
         var returned = await _edgeDbClient.QuerySingleAsync<RestaurantGot>(query, new Dictionary<string, object>
-    {
-        { "email", emaile }
-    });
+        {
+            { "email", emaile }
+        });
 
         if (returned != null)
         {
@@ -44,7 +44,6 @@ public class AdminPageModel : PageModel
             return RedirectToPage("/Admins/Login");
         }
     }
-
     public async Task<IActionResult> OnPostAsync()
     {
         string email = HttpContext.Session.GetString("Email");
@@ -77,9 +76,7 @@ public class AdminPageModel : PageModel
                         { "menu_upload_date", DateTime.Now },
                         { "menu_pdf", File.FileName }
                        
-                    });
-
-
+        });
         return RedirectToPage("AdminPage", new { emaile = email });
     }
 }

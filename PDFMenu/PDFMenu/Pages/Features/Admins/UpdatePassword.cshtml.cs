@@ -7,13 +7,11 @@ public class UpdatePasswordModel : PageModel
 {
     private readonly EdgeDBClient _edgeDbClient;
 
-
     public bool hide = false;
     [BindProperty]
     public RestaurantGot RestaurantGot { get; set; }
     [BindProperty]
     public string CurrentPassword { get; set; }
-
 
     [BindProperty]
     public string NewPassword { get; set; }
@@ -30,9 +28,9 @@ public class UpdatePasswordModel : PageModel
 
 
         var returned = await _edgeDbClient.QuerySingleAsync<RestaurantGot>(query, new Dictionary<string, object>
-    {
-        { "email", emaile }
-    });
+        {
+            { "email", emaile }
+        });
 
         if (returned != null)
         {
@@ -69,9 +67,7 @@ public class UpdatePasswordModel : PageModel
                      { "password",password },
                      { "email",email }
 
-                });
-
-
+        });
         return Page();
     }
 }

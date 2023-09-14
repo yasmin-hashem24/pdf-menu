@@ -7,8 +7,6 @@ public class RestaurantPageModel : PageModel
 {
     private readonly EdgeDBClient _edgeDbClient;
 
-   
-
     [BindProperty]
     public RestaurantGot RestaurantGot { get; set; }
     public RestaurantPageModel(EdgeDBClient edgeDbClient)
@@ -19,7 +17,6 @@ public class RestaurantPageModel : PageModel
     {
         var query = "SELECT restaurant { opening_hours, menu_upload_date,menu_pdf,email,tags, password,restaurant,main_photo ,phone_number,cover_photo,facebook,instagram,twitter,country,address,city,district,rating} " +
                       "FILTER restaurant.restaurant = <str>$restaurant LIMIT 1;";
-
 
         var returned = await _edgeDbClient.QuerySingleAsync<RestaurantGot>(query, new Dictionary<string, object>
         {
@@ -39,5 +36,4 @@ public class RestaurantPageModel : PageModel
             return RedirectToPage("/Index");
         }
     }
-
 }

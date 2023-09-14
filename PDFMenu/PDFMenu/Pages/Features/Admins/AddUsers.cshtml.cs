@@ -7,8 +7,6 @@ public class AddUsersModel : PageModel
 {
     private readonly EdgeDBClient _edgeDbClient;
 
-   
-
     [BindProperty]
     public RestaurantGot RestaurantGot { get; set; }
 
@@ -24,11 +22,10 @@ public class AddUsersModel : PageModel
         var query = "SELECT restaurant {email} " +
                       "FILTER restaurant.email = <str>$email LIMIT 1;";
 
-
         var returned = await _edgeDbClient.QuerySingleAsync<RestaurantGot>(query, new Dictionary<string, object>
-    {
-        { "email", emaile }
-    });
+        {
+            { "email", emaile }
+        });
 
         if (returned != null)
         {
@@ -67,9 +64,7 @@ public class AddUsersModel : PageModel
                         { "emailna",emailna},
                         { "phone_number", UserAdd.phone_number }
 
-                    });
-
-
+        });
         return Page();
     }
 }

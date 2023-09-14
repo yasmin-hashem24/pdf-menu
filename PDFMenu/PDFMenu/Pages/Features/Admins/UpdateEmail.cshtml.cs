@@ -5,21 +5,16 @@ namespace PDFMenu.Pages.Features.Admins
 {
     public class UpdateEmailModel : PageModel
     {
-
         [BindProperty]
-
         public string CurrentEmail { get; set; }
 
         [BindProperty]
-
         public string Password { get; set; }
 
         [BindProperty]
-
         public string NewEmail { get; set; }
 
         public bool hide = false;
-
 
         private readonly EdgeDBClient _edgeDbClient;
      
@@ -44,16 +39,14 @@ namespace PDFMenu.Pages.Features.Admins
                         
                         
                     
-                    }";
+            }";
             await _edgeDbClient.ExecuteAsync(query, new Dictionary<string, object?>
                     {
                         { "email",email },
                          { "password",password },
                          { "new_email",newemail }
 
-                    });
-
-           
+            });
             return Page();
         }
     }

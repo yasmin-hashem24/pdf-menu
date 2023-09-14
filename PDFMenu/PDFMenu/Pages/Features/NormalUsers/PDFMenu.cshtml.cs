@@ -5,12 +5,9 @@ namespace PDFMenu.Pages.Features.NormalUsers;
 
 public class PDFMenuModel : PageModel
 {
-
     private readonly EdgeDBClient _edgeDbClient;
-
     [BindProperty]
     public string MenuName { get; set; }
-
     public PDFMenuModel(EdgeDBClient edgeDbClient)
     {
         _edgeDbClient = edgeDbClient;
@@ -19,5 +16,4 @@ public class PDFMenuModel : PageModel
     {
         MenuName = menu;
     }
-
 }

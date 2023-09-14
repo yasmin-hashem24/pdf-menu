@@ -53,9 +53,9 @@ public class RemoveUsersModel : PageModel
             FILTER user.email = <str>$emailuser;";
 
         await _edgeDbClient.ExecuteAsync(query, new Dictionary<string, object?>
-            {
+        {
                 { "emailuser", emailuser }
-            });
+        });
 
         return Page();
     }
