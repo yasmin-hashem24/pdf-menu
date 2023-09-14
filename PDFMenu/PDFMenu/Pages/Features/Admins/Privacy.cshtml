@@ -5,54 +5,50 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
  <link rel="stylesheet" href="~/css/Admins/Privacy.css" />
   <header>
-  <div class="header-left">
-    <img src="~/Images/logo.png" alt="Logo" width="100" height="60" class="float-start header-logo">
-    <div class="DineDocs">
-      <p>DineDocs</p>
-    </div>
-  </div>
+      <div class="header-left">
+        <img src="~/Images/logo.png" alt="Logo" width="100" height="60" class="float-start header-logo">
+        <div class="DineDocs">
+          <p>DineDocs</p>
+        </div>
+      </div>
   
-  <div class="header-right">
-    <a href="/Index" class="header-button">Home</a>
-     <a href="/Features/NormalUsers/ContactUs" class="header-button">Contact Us</a>
-    <a href="/Features/NormalUsers/About" class="header-button">About</a>
-  </div>
-</header>
-   <div class="separator"></div>
-    <div class="separator"></div>
+      <div class="header-right">
+        <a href="/Index" class="header-button">Home</a>
+        <a href="/Features/NormalUsers/ContactUs" class="header-button">Contact Us</a>
+        <a href="/Features/NormalUsers/About" class="header-button">About</a>
+      </div>
+  </header>
+  <div class="separator"></div>
+  <div class="separator"></div>
   <div class="container">
 
 
-          <h2>Privacy</h2>
-           <div class="separator"></div>
+     <h2>Privacy</h2>
+     <div class="separator"></div>
      <div class="form-row">
         <div class="form-group">
              <form method="post" asp-page-handler="UpdateEmail">
                   <button type="submit">Update Email</button>
              </form>
         </div>
-
          <div class="form-group">
              <form method="post" asp-page-handler="UpdatePassword">
                   <button type="submit">Update Password</button>
              </form>
-          </div>
-
-        </div>
-
-         <div class="separator"></div>
-
-         <div class="form-row">
+         </div>
+     </div>
+     <div class="separator"></div>
+     <div class="form-row">
         <div class="form-group">
              <form method="post" asp-page-handler="AddUsers">
                   <button type="submit">Add Users</button>
              </form>
         </div>
-         <div class="form-group">
+        <div class="form-group">
              <form method="post" asp-page-handler="RemoveUsers">
                   <button type="submit">Remove Users</button>
              </form>
-          </div>
         </div>
+     </div>
   </div>
 

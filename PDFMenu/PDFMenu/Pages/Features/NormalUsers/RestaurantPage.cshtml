@@ -19,8 +19,8 @@
   </div>
 </header>
 
- <img src="~/Images/coverpics/@Model.RestaurantGot.cover_photo" alt="Cover Photo" class="img-fluid rounded full-width-img">
- <div class="separator"></div>
+<img src="~/Images/coverpics/@Model.RestaurantGot.cover_photo" alt="Cover Photo" class="img-fluid rounded full-width-img">
+<div class="separator"></div>
 
 <div class="row" style="max-width: 100%;">
   <div class="col-md-2 col-6 pic">
@@ -52,7 +52,7 @@
   </div>
 </div>
 
-   <hr style="border: none; height: 1px; background-color: #000000; opacity: 0.5; margin-bottom:10px ;">
+<hr style="border: none; height: 1px; background-color: #000000; opacity: 0.5; margin-bottom:10px ;">
  
 
 <div class="row">
@@ -85,20 +85,20 @@
       </div>
 
 
-       <div class="col-md-4 ">
-           <div class="bluee">
-        <div class="shadow-sm rounded-lg d-flex flex-column justify-content-center align-items-center">
+      <div class="col-md-4 ">
+        <div class="bluee">
+            <div class="shadow-sm rounded-lg d-flex flex-column justify-content-center align-items-center">
         
-          <a href="/Features/NormalUsers/PDFMenu/@Model.RestaurantGot.menu_pdf" class="pic1">View PDF Menu</a>
-          <div class="d-flex align-items-center">
-            <i class="far fa-calendar-alt date-icon"></i>
-            <p class="date-text">@Model.RestaurantGot.menu_upload_date Last Updated</p>
-          </div>
+              <a href="/Features/NormalUsers/PDFMenu/@Model.RestaurantGot.menu_pdf" class="pic1">View PDF Menu</a>
+              <div class="d-flex align-items-center">
+                <i class="far fa-calendar-alt date-icon"></i>
+                <p class="date-text">@Model.RestaurantGot.menu_upload_date Last Updated</p>
+              </div>
+            </div>
         </div>
-         </div>
       </div>
       <div class="col-md-4 ">
-            <div class="bluee">
+          <div class="bluee">
                <div class="shadow-sm rounded-lg d-flex flex-column justify-content-center align-items-center">
                       <div class="contact">Contact Us</div>
                
@@ -108,46 +108,36 @@
                         <a href=@Model.RestaurantGot.twitter target="_blank"><i class="fab fa-twitter"></i></a>
                          <a href="mailto:{@Model.RestaurantGot.email}" target="_blank"><i class="fa fa-envelope"></i></a>
 
-                     </div>
+                      </div>
                </div>
 
-                </div>
+          </div>
 
       </div>
     </div>
 
-  </div>
+   </div>
 </div>
 
 <script>
-  // Get the current time
   var now = new Date();
   var currentHour = now.getHours();
   var currentMinutes = now.getMinutes();
   var currentTime = currentHour + ':' + currentMinutes;
-
-  // Get the opening hours
   var openingHours = '@Model.RestaurantGot.opening_hours';
-
-  // Split the opening hours into start and end times
   var [startTime, endTime] = openingHours.split(' - ');
-
-  // Convert the start and end times to 24-hour format if they are in 12-hour format
   if (startTime.includes('AM') && startTime.startsWith('12')) {
     startTime = startTime.replace('12:', '00:');
   } else if (startTime.includes('PM') && !startTime.startsWith('12')) {
     var hours = parseInt(startTime.split(':')[0]) + 12;
     startTime = hours + ':' + startTime.split(':')[1];
   }
-
   if (endTime.includes('AM') && endTime.startsWith('12')) {
     endTime = endTime.replace('12:', '00:');
   } else if (endTime.includes('PM') && !endTime.startsWith('12')) {
     var hours = parseInt(endTime.split(':')[0]) + 12;
     endTime = hours + ':' + endTime.split(':')[1];
   }
-
-  // Check if the current time is within the opening hours
   if (startTime <= currentTime && currentTime <= endTime) {
     document.getElementById('opening-hours').innerText = 'Opened';
     document.getElementById('opening-hours').classList.add('opened');

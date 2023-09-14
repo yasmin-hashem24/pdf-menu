@@ -1,10 +1,11 @@
-﻿@page 
+﻿@page
 @model PDFMenu.Pages.Features.Admins.RemoveUsersModel
 @{
 }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 <link rel="stylesheet" href="~/css/Admins/RemoveUsers.css" />
- <header>
+
+<header>
   <div class="header-left">
     <img src="~/Images/logo.png" alt="Logo" width="100" height="60" class="float-start header-logo">
     <div class="DineDocs">
@@ -14,45 +15,42 @@
   
   <div class="header-right">
     <a href="/Index" class="header-button">Home</a>
-     <a href="/Features/NormalUsers/ContactUs" class="header-button">Contact Us</a>
+    <a href="/Features/NormalUsers/ContactUs" class="header-button">Contact Us</a>
     <a href="/Features/NormalUsers/About" class="header-button">About</a>
-  </div>
+   </div>
 </header>
 
-   <div class="container">
-       <h1>Delete User</h1>
-        <div class="container1" >
-
-
-            
-  <table>
-    <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone Number</th>
-        <th></th>
-    </tr>
-
-   
-   @foreach (var user in @Model.Users)
-    {
-
-        <tr>
-                <td>@user.name</td>
-                <td>@user.email</td>
-                <td>@user.phone_number</td>
-                <td>
-                  <form id="delete-form" method="post">
-                    <button class="delete-button" onclick="confirmDelete()" type="button"><i class="fas fa-times"></i></button>
-                    <input type="hidden" name="emailuser" value="@user.email">
-                    <input type="hidden" name="emailrestaurant" value="@Model.RestaurantGot.email">
-                  </form>
-                </td>
-        </tr>
-    }
-</table>
+<div class="container">
+    <h1>Delete User</h1>
+    <div class="container1">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th></th>
+            </tr>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.name</td>
+                    <td>@user.email</td>
+                    <td>@user.phone_number</td>
+                    <td>
+                        <form id="delete-form" method="post">
+                            <button class="delete-button" onclick="confirmDelete()" type="button">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <input type="hidden" name="emailuser" value="@user.email">
+                            <input type="hidden" name="emailrestaurant" value="@Model.RestaurantGot.email">
+                        </form>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
 </div>
-</div>
+
 <script>
   function confirmDelete() {
     var result = window.confirm("Are you sure you want to delete this user?");
