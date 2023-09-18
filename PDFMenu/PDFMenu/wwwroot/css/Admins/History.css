@@ -33,6 +33,17 @@ header {
         width: 2px;
         background-color: rgba(255, 255, 255, 0.3); /* Adjust the opacity as needed */
     }
+
+.DineDocs {
+    white-space: normal;
+    text-align: left;
+    word-break: break-all;
+    font-weight: bold;
+    font-size: xx-large;
+    margin-top: 10px;
+    color: #2a2c41;
+    display: inline-block;
+}
 h1 {
     font-size: xx-large;
     font-weight:bolder;
@@ -41,15 +52,7 @@ h1 {
     margin-left:30px;
 }
 
-.DineDocs {
-    white-space: normal;
-    text-align: left;
-    word-break: break-all;
-    font-weight: bold;
-    font-size: x-large;
-    margin-top: 10px;
-    color: #2a2c41;
-}
+
 
 .container {
     background-color: #2a2c41;

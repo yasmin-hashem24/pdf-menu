@@ -8,7 +8,7 @@ namespace PDFMenu.Pages.Features.Admins;
 public class AdminPageModel : PageModel
 {
     private readonly EdgeDBClient _edgeDbClient;
-
+    public bool hide = false;
     [BindProperty]
     public IFormFile File { get; set; }
 
@@ -47,6 +47,7 @@ public class AdminPageModel : PageModel
     public async Task<IActionResult> OnPostAsync()
     {
         string email = HttpContext.Session.GetString("Email");
+       
 
         if (File != null && File.Length > 0)
         {

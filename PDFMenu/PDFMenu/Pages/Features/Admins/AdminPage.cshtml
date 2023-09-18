@@ -12,7 +12,6 @@
     </div>
   </div>
   <select onchange="if (this.value == '/page2') {showPopup()} else {location = this.value;}">
-    <option value=""></option>
     <option value="/Features/Admins/Settings">Settings</option>
     <option value="/page2">Upload Menu</option>
     <option value="/Features/Admins/Privacy">Privacy</option>
@@ -133,14 +132,17 @@
     <form method="post" enctype="multipart/form-data">
         <input type="file" name="file" class="file-upload"><br><br>
         <input type="hidden" name="email" value="@Model.RestaurantGot.email">
-        <input type="submit" value="Upload" class="file-upload">
+        <input type="submit" value="Upload" class="file-upload" onclick="showPopupAlert()">
     </form>
     <button class="close-btn" onclick="hidePopup()">X</button>
 </div>
 </div>
-
-
- 
+<script>
+function showPopupAlert() {
+  var popup = window.open("", "popup", "width=200,height=200");
+  popup.document.write("<p>Menu Uploaded Successfuly!</p>");
+}
+ </script> 
  
 <script>
 function showPopup() {
@@ -187,4 +189,10 @@ function hidePopup() {
     document.getElementById('opening-hours').innerText = 'Closed';
     document.getElementById('opening-hours').classList.add('closed');
   }
+</script>
+
+<script>
+    function redirectToLoginPage() {
+      window.location.href = '/Features/Admins/Settings';
+    }
 </script>

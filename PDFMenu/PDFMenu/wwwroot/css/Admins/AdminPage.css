@@ -231,7 +231,6 @@ select {
     cursor: pointer;
 }
 
-
 @media (max-width: 767px) {
     .col-md-4 {
         flex-basis: 80%;

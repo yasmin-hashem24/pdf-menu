@@ -33,18 +33,25 @@
         <p>Discover Delicious Delights: Your Ultimate Menus Exploration Website </p>
     </div>
   
-    <div class="search-wrapper">
-            <form id="searchForm" method="get">
-                 <img src="~/Images/restaurant.png" alt="Search" width="40" height="40" style="margin-right: 5px; margin-left: 5px;filter: grayscale(100%)">
+<div class="search-wrapper">
+    <form id="searchForm" method="get">
+        <img src="~/Images/restaurant.png" alt="Search" width="40" height="40" style="margin-right: 5px; margin-left: 5px;filter: grayscale(100%)">
 
-                 <ejs-autocomplete id="autocomplete_example" filterType="StartsWith" highlight="true" dataSource="@Model.RestaurantsForSearch" placeholder="Search for your desired restaurant" popupHeight="700px" popupWidth="100%" style="font-weight:500; font-size:larger; height:50px; background-color: white;">
-                <e-autocomplete-fields value="restaurant"></e-autocomplete-fields>
-            </ejs-autocomplete>
-                <button type="submit">
-                    <img src="~/Images/search.png" alt="Search" width="40" height="40">
-                </button>
-            </form>
-    </div>
+        <input type="text" id="autocomplete_input" list="restaurants_list" placeholder="Search for your desired restaurant" style="font-weight:500; font-size:larger; height:50px; background-color: white;">
+        <datalist id="restaurants_list">
+            @foreach (var restaurant in Model.RestaurantsForSearch)
+            {
+                <option value="@restaurant.restaurant"></option>
+            }
+        </datalist>
+
+        <button type="submit">
+            <img src="~/Images/search.png" alt="Search" width="40" height="40">
+        </button>
+    </form>
+</div>
+
+
     <div class="Announce1">
          <p>Top Rated for the month  </p>
     </div>
@@ -66,9 +73,9 @@
         </div>
       }
   </div>
-  <ejs-scripts></ejs-scripts>   
+ 
 
-    <script>
+<script>
         document.getElementById("searchForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent the form from submitting normally
 
@@ -76,4 +83,25 @@
             var url = "Features/NormalUsers/RestaurantPage/" + encodeURIComponent(chosenOption);
             window.location.href = url;
         });
-    </script>
+</script>
+<script>
+  
+    var input = document.getElementById("autocomplete_input");
+    var dataList = document.getElementById("restaurants_list");
+
+    input.addEventListener("input", function (event) {
+        var inputValue = event.target.value.toLowerCase();
+        var options = dataList.getElementsByTagName("option");
+
+        for (var i = 0; i < options.length; i++) {
+            var option = options[i];
+            var optionText = option.value.toLowerCase();
+
+            if (optionText.startsWith(inputValue)) {
+                option.style.display = "";
+            } else {
+                option.style.display = "none";
+            }
+        }
+    });
+</script>

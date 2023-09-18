@@ -27,7 +27,8 @@ namespace PDFMenu.Pages.Features.Admins
                         if (returned != null)
                         {
                             MenuUploads = returned.menu_uploads;
-                            return Page();
+                            MenuUploads.Reverse();
+                return Page();
                         }
                         else
                         {
