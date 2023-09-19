@@ -32,12 +32,23 @@
     <div class="Announce">
         <p>Discover Delicious Delights: Your Ultimate Menus Exploration Website </p>
     </div>
-  
+
+
 <div class="search-wrapper">
-    <form id="searchForm" method="get">
+    <div id="search-form">
+    <form  method="post" >
         <img src="~/Images/restaurant.png" alt="Search" width="40" height="40" style="margin-right: 5px; margin-left: 5px;filter: grayscale(100%)">
 
-        <input type="text" id="autocomplete_input" list="restaurants_list" placeholder="Search for your desired restaurant" style="font-weight:500; font-size:larger; height:50px; background-color: white;">
+        <input type="text" id="autocomplete_input" name="autocomplete_input" list="restaurants_list" placeholder="Search for your desired restaurant" style="font-weight:500; font-size:larger; height:50px; background-color: white;">
+
+        <select id="city_filter" name="city_filter">
+            <option value="">All Cities</option>
+            @foreach (var city in Model.CitiesOfSearch)
+            {
+                <option value="@city">@city</option>
+            }
+        </select>
+
         <datalist id="restaurants_list">
             @foreach (var restaurant in Model.RestaurantsForSearch)
             {
@@ -50,7 +61,7 @@
         </button>
     </form>
 </div>
-
+</div>
 
     <div class="Announce1">
          <p>Top Rated for the month  </p>
@@ -75,14 +86,20 @@
   </div>
  
 
-<script>
-        document.getElementById("searchForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the form from submitting normally
 
-            var chosenOption = document.getElementById("autocomplete_example").value;
-            var url = "Features/NormalUsers/RestaurantPage/" + encodeURIComponent(chosenOption);
-            window.location.href = url;
-        });
+<script>
+    var form = document.getElementById("searchForm");
+    var input = document.getElementById("autocomplete_input");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); 
+
+        var selectedRestaurant = input.value;
+        var url = "Features/NormalUsers/RestaurantPage/" + encodeURIComponent(selectedRestaurant);
+        form.action = url;
+
+        form.submit(); 
+    });
 </script>
 <script>
   
