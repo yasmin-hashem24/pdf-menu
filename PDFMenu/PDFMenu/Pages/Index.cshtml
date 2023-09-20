@@ -39,10 +39,10 @@
     <form  method="post" >
         <img src="~/Images/restaurant.png" alt="Search" width="40" height="40" style="margin-right: 5px; margin-left: 5px;filter: grayscale(100%)">
 
-        <input type="text" id="autocomplete_input" name="autocomplete_input" list="restaurants_list" placeholder="Search for your desired restaurant" style="font-weight:500; font-size:larger; height:50px; background-color: white;">
+        <input type="text" id="autocomplete_input"  required name="autocomplete_input" list="restaurants_list" placeholder="Search for your desired restaurant" style="font-weight:400; font-size:large; height:50px; background-color: white;">
 
-        <select id="city_filter" name="city_filter">
-            <option value="">All Cities</option>
+        <select id="city_filter" name="city_filter" width="500">
+            <option value="All Cities">All Cities</option>
             @foreach (var city in Model.CitiesOfSearch)
             {
                 <option value="@city">@city</option>
@@ -86,21 +86,6 @@
   </div>
  
 
-
-<script>
-    var form = document.getElementById("searchForm");
-    var input = document.getElementById("autocomplete_input");
-
-    form.addEventListener("submit", function(event) {
-        event.preventDefault(); 
-
-        var selectedRestaurant = input.value;
-        var url = "Features/NormalUsers/RestaurantPage/" + encodeURIComponent(selectedRestaurant);
-        form.action = url;
-
-        form.submit(); 
-    });
-</script>
 <script>
   
     var input = document.getElementById("autocomplete_input");

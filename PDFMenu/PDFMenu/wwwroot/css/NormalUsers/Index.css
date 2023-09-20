@@ -13,6 +13,8 @@
     margin-top: 10px;
  
 }
+
+
 .header-right {
     display: flex;
     gap: 20px; /* Adjust the gap between the links as needed */
@@ -198,31 +200,59 @@ button {
         justify-content: space-between;
     }
 
-    .form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-        flex-direction: column;
-        margin: 10px;
-    }
-
-    input[type="text"] {
-        width: 100%;
-        font-size: clamp(20px, 4vw, 40px); 
-        padding: 5px;
-        border: none;
-        background-color: white;
-        margin-left: 10px;
-        margin-right: 100px;
-    }
-
     .search-wrapper {
         align-items: center;
         justify-content: center;
         background-color: white;
         border: 1px solid darkgrey;
-        width: 50%;
+        width: 90%;
+        margin: 10px;
+        padding: 10px;
+        margin-bottom:10px;
+    }
+
+    #search-form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+        #search-form img {
+            margin: 5px;
+        }
+
+    input[type="text"] {
+        width: 100%;
+        font-size: clamp(14px, 4vw, 24px);
+        padding: 5px;
+        border: none;
+        background-color: white;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #city_filter {
+        width: 100%;
+        font-size: 14px;
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+    #restaurants_list {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        background-color: transparent;
+        border: none;
+        color: grey;
+        padding: 5px;
     }
 
     .Announce {
@@ -337,4 +367,6 @@ button {
         background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
         z-index: -1;
     }
+
+   
 }

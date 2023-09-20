@@ -11,13 +11,16 @@
       <p>DineDocs</p>
     </div>
   </div>
-  <select onchange="if (this.value == '/page2') {showPopup()} else {location = this.value;}">
-    <option value="/Features/Admins/Settings">Settings</option>
-    <option value="/page2">Upload Menu</option>
-    <option value="/Features/Admins/Privacy">Privacy</option>
-     <option value="/Features/Admins/History">History</option>
-    <option value="/index">Logout</option>
-  </select>
+<select onchange="if (this.value == '/page2') { showPopup(); } else { location.href = this.value + '?_=' + new Date().getTime(); }" onclick="this.selectedIndex = 0;">
+  <option value="" disabled selected hidden></option>
+  <option value="/Features/Admins/Settings">Settings</option>
+  <option value="/page2">Upload Menu</option>
+  <option value="/Features/Admins/Privacy">Privacy</option>
+  <option value="/Features/Admins/History">History</option>
+  <option value="/index">Logout</option>
+</select>
+
+
   <div class="header-right">
     <a href="/Index" class="header-button">Home</a>
     <a href="/Features/NormalUsers/ContactUs" class="header-button">Contact Us</a>
