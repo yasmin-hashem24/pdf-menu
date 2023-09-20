@@ -135,17 +135,22 @@
     <form method="post" enctype="multipart/form-data">
         <input type="file" name="file" class="file-upload"><br><br>
         <input type="hidden" name="email" value="@Model.RestaurantGot.email">
-        <input type="submit" value="Upload" class="file-upload" onclick="showPopupAlert()">
+        <input type="submit" value="Upload" class="file-upload" onclick="showPopup3()()">
     </form>
     <button class="close-btn" onclick="hidePopup()">X</button>
 </div>
 </div>
-<script>
-function showPopupAlert() {
-  var popup = window.open("", "popup", "width=200,height=200");
-  popup.document.write("<p>Menu Uploaded Successfuly!</p>");
-}
- </script> 
+
+
+ <div id="popup3" class="popup hidden">
+      <div class="popup-content">
+         
+               <p>Menu Uploaded Successfuly </p>
+           
+            <button class="close-btn" onclick="hidePopup3()">X</button>
+      </div>
+    </div>
+
  
 <script>
 function showPopup() {
@@ -154,6 +159,15 @@ function showPopup() {
 
 function hidePopup() {
     document.getElementById("popup").classList.add("hidden");
+}
+
+
+function showPopup3() {
+    document.getElementById("popup3").classList.remove("hidden");
+}
+
+function hidePopup3() {
+    document.getElementById("popup3").classList.add("hidden");
 }
 </script>
 <script>

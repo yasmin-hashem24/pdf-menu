@@ -36,11 +36,23 @@ public class SettingsModel : PageModel
     public string District { get; set; }
 
     [BindProperty]
-    public IFormFile File { get; set; }
-
+    public string[] tags { get; set; }
 
 
     [BindProperty]
+    public IFormFile File { get; set; }
+
+    [BindProperty]
+
+    public string tag0 { get; set; }
+    [BindProperty]
+
+    public string tag1 { get; set; }
+    [BindProperty]
+
+    public string tag2 { get; set; }
+
+[BindProperty]
     public string[] Countries { get; set; } = new string[] {
         "Algeria",
         "Angola",
@@ -81,7 +93,7 @@ public class SettingsModel : PageModel
     {
 
         string email = HttpContext.Session.GetString("Email");
-        var query = "SELECT restaurant {facebook,restaurant,phone_number,instagram,twitter,country,city,district,address,opening_hours} " +
+        var query = "SELECT restaurant {tags,facebook,restaurant,phone_number,instagram,twitter,country,city,district,address,opening_hours} " +
                        "FILTER restaurant.email = <str>$email LIMIT 1;";
 
         var parameters = new Dictionary<string, object>
@@ -101,6 +113,10 @@ public class SettingsModel : PageModel
         District = restaurant.district;
         Twitter = restaurant.twitter;
         OpeningHours = restaurant.opening_hours;
+        tags = restaurant.tags;
+        tag0 = tags[0];
+        tag1 = tags[1];
+        tag2 = tags[2];
         return Page();
     }
 
@@ -135,8 +151,9 @@ public class SettingsModel : PageModel
         });
         return Page();
     }
-    public async Task<IActionResult> OnPostCover()
+    public async Task OnPostCover()
     {
+        Console.WriteLine("INSIDE COVER");
             string email = HttpContext.Session.GetString("Email");
        
             if (File != null && File.Length > 0)
@@ -164,10 +181,10 @@ public class SettingsModel : PageModel
                         { "cover_photo", File.FileName }
 
             });
-            return Page();
+           
     }
 
-    public async Task<IActionResult> OnPostMain()
+    public async Task OnPostMain()
     {
             string email = HttpContext.Session.GetString("Email");
 
@@ -197,7 +214,5 @@ public class SettingsModel : PageModel
 
             });
 
-
-            return Page();
     }
 }
