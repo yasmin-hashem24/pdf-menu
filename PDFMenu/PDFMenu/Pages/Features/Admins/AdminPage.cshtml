@@ -135,7 +135,7 @@
     <form method="post" enctype="multipart/form-data">
         <input type="file" name="file" class="file-upload"><br><br>
         <input type="hidden" name="email" value="@Model.RestaurantGot.email">
-        <input type="submit" value="Upload" class="file-upload" onclick="showPopup3()()">
+        <input type="submit" value="Upload" class="file-upload" onclick=" hidePopup(); showPopup3()">
     </form>
     <button class="close-btn" onclick="hidePopup()">X</button>
 </div>
