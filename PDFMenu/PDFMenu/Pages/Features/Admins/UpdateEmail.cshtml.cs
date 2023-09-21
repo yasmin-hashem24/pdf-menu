@@ -25,7 +25,7 @@ namespace PDFMenu.Pages.Features.Admins
         }
         public async Task<IActionResult> OnPostAsync()
         {
-
+            HttpContext.Session.SetString("Email", NewEmail);
             hide = true;
             string email = CurrentEmail;
             string password = Password;
