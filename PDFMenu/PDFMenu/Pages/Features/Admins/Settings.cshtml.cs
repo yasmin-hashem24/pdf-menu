@@ -149,6 +149,32 @@ public class SettingsModel : PageModel
                         { "opening_hours", OpeningHours },
                          { "phone_number", PhoneNumber }
         });
+
+      
+        var query1= "SELECT restaurant {tags,facebook,restaurant,phone_number,instagram,twitter,country,city,district,address,opening_hours} " +
+                       "FILTER restaurant.email = <str>$email LIMIT 1;";
+
+        var parameters = new Dictionary<string, object>
+        {
+                { "email", email }
+        };
+
+        var restaurant = await _edgeDbClient.QuerySingleAsync<RestaurantGot>(query1, parameters);
+
+        Facebook = restaurant.facebook;
+        Restaurant = restaurant.restaurant;
+        Instagram = restaurant.instagram;
+        Address = restaurant.address;
+        PhoneNumber = restaurant.phone_number;
+        Country = restaurant.country;
+        City = restaurant.city;
+        District = restaurant.district;
+        Twitter = restaurant.twitter;
+        OpeningHours = restaurant.opening_hours;
+        tags = restaurant.tags;
+        tag0 = tags[0];
+        tag1 = tags[1];
+        tag2 = tags[2];
         return Page();
     }
     public async Task OnPostCover()
@@ -181,7 +207,31 @@ public class SettingsModel : PageModel
                         { "cover_photo", File.FileName }
 
             });
-           
+        var query1 = "SELECT restaurant {tags,facebook,restaurant,phone_number,instagram,twitter,country,city,district,address,opening_hours} " +
+                      "FILTER restaurant.email = <str>$email LIMIT 1;";
+
+        var parameters = new Dictionary<string, object>
+        {
+                { "email", email }
+        };
+
+        var restaurant = await _edgeDbClient.QuerySingleAsync<RestaurantGot>(query1, parameters);
+
+        Facebook = restaurant.facebook;
+        Restaurant = restaurant.restaurant;
+        Instagram = restaurant.instagram;
+        Address = restaurant.address;
+        PhoneNumber = restaurant.phone_number;
+        Country = restaurant.country;
+        City = restaurant.city;
+        District = restaurant.district;
+        Twitter = restaurant.twitter;
+        OpeningHours = restaurant.opening_hours;
+        tags = restaurant.tags;
+        tag0 = tags[0];
+        tag1 = tags[1];
+        tag2 = tags[2];
+
     }
 
     public async Task OnPostMain()
@@ -213,6 +263,30 @@ public class SettingsModel : PageModel
                         { "cover_photo", File.FileName }
 
             });
+        var query1 = "SELECT restaurant {tags,facebook,restaurant,phone_number,instagram,twitter,country,city,district,address,opening_hours} " +
+                      "FILTER restaurant.email = <str>$email LIMIT 1;";
+
+        var parameters = new Dictionary<string, object>
+        {
+                { "email", email }
+        };
+
+        var restaurant = await _edgeDbClient.QuerySingleAsync<RestaurantGot>(query1, parameters);
+
+        Facebook = restaurant.facebook;
+        Restaurant = restaurant.restaurant;
+        Instagram = restaurant.instagram;
+        Address = restaurant.address;
+        PhoneNumber = restaurant.phone_number;
+        Country = restaurant.country;
+        City = restaurant.city;
+        District = restaurant.district;
+        Twitter = restaurant.twitter;
+        OpeningHours = restaurant.opening_hours;
+        tags = restaurant.tags;
+        tag0 = tags[0];
+        tag1 = tags[1];
+        tag2 = tags[2];
 
     }
 }
