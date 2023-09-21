@@ -48,9 +48,29 @@
     <div class="separator"></div>
 
     <div class="form-row">
-      <button type="submit">Add</button>
+      <button type="submit" onclick="showPopup()">Add</button>
     </div>
 
-    <input type="hidden" name="emailna" value="@Model.RestaurantGot.email">
+    
   </form>
 </div>
+
+ <div id="popup" class="popup hidden">
+      <div class="popup-content">
+            <button class="close-btn" onclick="hidePopup()">X</button>
+            <p>User Added Successfuly </p>
+           
+      </div>
+ </div>
+
+
+<script>
+function showPopup() {
+    document.getElementById("popup").classList.remove("hidden");
+}
+
+function hidePopup() {
+    document.getElementById("popup").classList.add("hidden");
+   
+}
+</script>

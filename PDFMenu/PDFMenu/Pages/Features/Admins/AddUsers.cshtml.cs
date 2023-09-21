@@ -43,8 +43,8 @@ public class AddUsersModel : PageModel
 
     public async Task<IActionResult> OnPostAsync()
     {
-        var emailna = Request.Form.FirstOrDefault(x => x.Key == "emailna").Value.FirstOrDefault(); ;
-       
+        string emailna = HttpContext.Session.GetString("Email");
+
 
         var query = @"
                     UPDATE restaurant

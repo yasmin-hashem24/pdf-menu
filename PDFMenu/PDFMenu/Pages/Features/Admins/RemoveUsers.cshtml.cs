@@ -44,10 +44,7 @@ public class RemoveUsersModel : PageModel
     {
 
         var emailuser = Request.Form.FirstOrDefault(x => x.Key == "emailuser").Value.FirstOrDefault();
-        var emailrestaurant = Request.Form.FirstOrDefault(x => x.Key == "emailrestaurant").Value.FirstOrDefault();
-        Console.Write("INSIDE");
-        Console.Write(emailuser);
-        Console.WriteLine(emailrestaurant);
+      
         var query = @"
             DELETE user
             FILTER user.email = <str>$emailuser;";
@@ -57,6 +54,24 @@ public class RemoveUsersModel : PageModel
                 { "emailuser", emailuser }
         });
 
-        return Page();
+        string emaile = HttpContext.Session.GetString("Email");
+        var query1 = @"SELECT restaurant { users :{name, email,phone_number},} FILTER restaurant.email = <str>$email LIMIT 1;";
+        
+        var returned = await _edgeDbClient.QuerySingleAsync<RestaurantGot>(query1, new Dictionary<string, object>
+                        {
+                            { "email", emaile }
+                        });
+
+        if (returned != null)
+        {
+            RestaurantGot = returned;
+            Users = returned.users;
+            return Page();
+        }
+        else
+        {
+
+            return RedirectToPage("/Admins/AdminPage");
+        }
     }
 }

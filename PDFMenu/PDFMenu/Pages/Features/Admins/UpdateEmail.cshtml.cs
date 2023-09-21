@@ -36,8 +36,6 @@ namespace PDFMenu.Pages.Features.Admins
                     SET {
                           
                         email := <str>$new_email
-                        
-                        
                     
             }";
             await _edgeDbClient.ExecuteAsync(query, new Dictionary<string, object?>

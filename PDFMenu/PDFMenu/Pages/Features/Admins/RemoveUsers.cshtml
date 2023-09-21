@@ -40,9 +40,10 @@
                         <form id="delete-form" method="post">
                             <button class="delete-button" onclick="confirmDelete()" type="button">
                                 <i class="fas fa-times"></i>
+                                <input type="hidden" name="emailuser" value="@user.email">
                             </button>
-                            <input type="hidden" name="emailuser" value="@user.email">
-                            <input type="hidden" name="emailrestaurant" value="@Model.RestaurantGot.email">
+                            
+                            
                         </form>
                     </td>
                 </tr>
