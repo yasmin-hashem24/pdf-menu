@@ -1,4 +1,4 @@
-﻿@page "{emaile}"
+﻿@page "/Features/Admins/AdminPages/{emaile}/{hide}"
 @model PDFMenu.Pages.Features.Admins.AdminPageModel
 @{
 }
@@ -13,7 +13,7 @@
   </div>
 <select onchange="if (this.value == '/page2') { showPopup(); } else { location.href = this.value + '?_=' + new Date().getTime(); }" onclick="this.selectedIndex = 0;">
   <option value="" disabled selected hidden></option>
-  <option value="/Features/Admins/Settings">Settings</option>
+  <option value="/Features/Admins/Settings/false/false/false">Settings</option>
   <option value="/page2">Upload Menu</option>
   <option value="/Features/Admins/Privacy">Privacy</option>
   <option value="/Features/Admins/History">History</option>
@@ -96,7 +96,7 @@
       </div>
 
 
-       <div class="col-md-4 col-sm-6">
+      <div class="col-md-4 col-sm-6">
            <div class="bluee">
         <div class="shadow-sm rounded-lg d-flex flex-column justify-content-center align-items-center">
         
@@ -135,21 +135,29 @@
     <form method="post" enctype="multipart/form-data">
         <input type="file" name="file" class="file-upload"><br><br>
         <input type="hidden" name="email" value="@Model.RestaurantGot.email">
-        <input type="submit" value="Upload" class="file-upload" onclick=" hidePopup(); showPopup3()">
+        <input type="submit" value="Upload" class="file-upload" onclick=" hidePopup()">
     </form>
     <button class="close-btn" onclick="hidePopup()">X</button>
 </div>
 </div>
+ <div class="popup" @(Model.Hide ? "" : "hidden")>
+          <div class="popup-content">
+            <button class="close" onclick="redirectToHomePage()">X</button>
+            <p>Email Updated Successfuly</p>
+          </div>
+ </div>    
+
+<script>
+  function redirectToHomePage() {
+   
+        var email = "@Model.RestaurantGot.email";
+    window.location.href = "/Features/Admins/AdminPages/" + email + "/false";
+
+  }
+</script>
 
 
- <div id="popup3" class="popup hidden">
-      <div class="popup-content">
-         
-               <p>Menu Uploaded Successfuly </p>
-           
-            <button class="close-btn" onclick="hidePopup3()">X</button>
-      </div>
-    </div>
+
 
  
 <script>
@@ -161,14 +169,6 @@ function hidePopup() {
     document.getElementById("popup").classList.add("hidden");
 }
 
-
-function showPopup3() {
-    document.getElementById("popup3").classList.remove("hidden");
-}
-
-function hidePopup3() {
-    document.getElementById("popup3").classList.add("hidden");
-}
 </script>
 <script>
   // Get the current time

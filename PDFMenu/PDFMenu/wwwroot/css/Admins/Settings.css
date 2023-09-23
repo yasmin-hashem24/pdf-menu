@@ -1,4 +1,14 @@
-﻿header {
+﻿
+.close {
+    color: #2a2c41;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+header {
     background-color: #fdbf50;
     color: white;
     padding: 5px;

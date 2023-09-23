@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "/Features/Admins/Settings/{cover}/{main}/{data}"
 @model PDFMenu.Pages.Features.Admins.SettingsModel
 @{
 }
@@ -80,7 +80,7 @@
 
       
       <div class="separator"></div>
-      <input type="submit" value="Edit" onclick="showPopup4()">
+      <input type="submit" value="Edit">
     </form>
 
     <div class="separator"></div>
@@ -102,7 +102,7 @@
        <div class="popup-content">
             <form  method="post"asp-page-handler="Cover" enctype="multipart/form-data">
                 <input type="file" name="file" class="file-upload"><br><br>
-                <input type="submit" value="Upload" class="file-upload" onclick="    hidePopup(); showPopup2()">
+                <input type="submit" value="Upload" class="file-upload" onclick="    hidePopup()">
             </form>
             <button class="close-btn" onclick="hidePopup()">X</button>
        </div>
@@ -111,40 +111,41 @@
       <div class="popup-content">
             <form method="post"asp-page-handler="Main" enctype="multipart/form-data">
                 <input type="file" name="file" class="file-upload"><br><br>
-                <input type="submit" value="Upload" class="file-upload" onclick="  hidePopup1();showPopup3()">
+                <input type="submit" value="Upload" class="file-upload" onclick="  hidePopup1()">
             </form>
             <button class="close-btn" onclick="hidePopup1()">X</button>
       </div>
     </div>
 
-     <div id="popup2" class="popup hidden">
-      <div class="popup-content">
-         
-               <p>Cover Uploaded Successfuly </p>
-           
-            <button class="close-btn" onclick="hidePopup2()">X</button>
-      </div>
-    </div>
+ <div class="popup" @(Model.hideCover ? "" : "hidden")>
+          <div class="popup-content">
+            <button class="close" onclick="redirectToHomePage()">X</button>
+            
+              <p>Main Profile Updated Succsessfuly</p>
+          </div>
+ </div>    
 
-     <div id="popup3" class="popup hidden">
-      <div class="popup-content">
-         
-               <p>Main Profile Uploaded Successfuly </p>
-           
-            <button class="close-btn" onclick="hidePopup3()">X</button>
-      </div>
-    </div>
+  <div class="popup" @(Model.hideMain ? "" : "hidden")>
+          <div class="popup-content">
+            <button class="close" onclick="redirectToHomePage()">X</button>
+          <p>Cover Updated Succsessfuly</p>
+          </div>
+ </div>   
 
-      <div id="popup4" class="popup hidden">
-      <div class="popup-content">
-         
-               <p>Data Updated Successfuly </p>
-           
-            <button class="close-btn" onclick="hidePopup4()">X</button>
-      </div>
-    </div>
-</div>
+   <div class="popup" @(Model.hideData ? "" : "hidden")>
+          <div class="popup-content">
+            <button class="close" onclick="redirectToHomePage()">X</button>
+          <p>Data Edited Succsessfuly</p>
+          </div>
+ </div> 
+<script>
+  function redirectToHomePage() {
+    
+      window.location.href = '/Features/Admins/Settings/false/false/false';
+  }
+</script>
 
+    
 <script>
 function showPopup() {
     document.getElementById("popup").classList.remove("hidden");
@@ -162,28 +163,4 @@ function showPopup1() {
 function hidePopup1() {
     document.getElementById("popup1").classList.add("hidden");
 }
-function showPopup2() {
-    document.getElementById("popup2").classList.remove("hidden");
-}
-
-function hidePopup2() {
-    document.getElementById("popup2").classList.add("hidden");
-}
-
-function showPopup3() {
-    document.getElementById("popup3").classList.remove("hidden");
-}
-
-function hidePopup3() {
-    document.getElementById("popup3").classList.add("hidden");
-}
-
-function showPopup4() {
-    document.getElementById("popup4").classList.remove("hidden");
-}
-
-function hidePopup4() {
-    document.getElementById("popup4").classList.add("hidden");
-}
-
 </script>

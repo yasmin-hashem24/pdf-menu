@@ -81,17 +81,20 @@ public class SettingsModel : PageModel
     [BindProperty]
     public string[] Districts { get; set; } = new string[] {};
 
-    public bool hide = false;
-
+    public bool hideCover = false;
+    public bool hideMain = false;
+    public bool hideData = false;
     private readonly EdgeDBClient _edgeDbClient;
     public SettingsModel(EdgeDBClient edgeDbClient)
     {
         _edgeDbClient = edgeDbClient;
         
     }
-    public async Task<IActionResult> OnGetAsync()
+    public async Task<IActionResult> OnGetAsync(bool cover, bool main, bool data)
     {
-
+        hideCover = cover;
+        hideMain = main;
+        hideData = data;
         string email = HttpContext.Session.GetString("Email");
         var query = "SELECT restaurant {tags,facebook,restaurant,phone_number,instagram,twitter,country,city,district,address,opening_hours} " +
                        "FILTER restaurant.email = <str>$email LIMIT 1;";
@@ -175,9 +178,9 @@ public class SettingsModel : PageModel
         tag0 = tags[0];
         tag1 = tags[1];
         tag2 = tags[2];
-        return Page();
+        return RedirectToPage("Settings", new { cover = false, main = false , data=true });
     }
-    public async Task OnPostCover()
+    public async Task<IActionResult> OnPostCover()
     {
         Console.WriteLine("INSIDE COVER");
             string email = HttpContext.Session.GetString("Email");
@@ -231,10 +234,10 @@ public class SettingsModel : PageModel
         tag0 = tags[0];
         tag1 = tags[1];
         tag2 = tags[2];
-
+        return RedirectToPage("Settings", new { cover = false, main = true, data = false });
     }
 
-    public async Task OnPostMain()
+    public async Task<IActionResult> OnPostMain()
     {
             string email = HttpContext.Session.GetString("Email");
 
@@ -287,6 +290,6 @@ public class SettingsModel : PageModel
         tag0 = tags[0];
         tag1 = tags[1];
         tag2 = tags[2];
-
+        return RedirectToPage("Settings", new { cover = true, main = false, data = false });
     }
 }

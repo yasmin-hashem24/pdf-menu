@@ -36,7 +36,7 @@ public class LoginModel : PageModel
         {
           
 
-            return RedirectToPage("/Features/Admins/AdminPage", new { emaile = email });
+            return RedirectToPage("/Features/Admins/AdminPage", new { emaile = email ,hide=false});
         }
         else
         {

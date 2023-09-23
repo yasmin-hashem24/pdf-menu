@@ -8,7 +8,7 @@ namespace PDFMenu.Pages.Features.Admins;
 public class AdminPageModel : PageModel
 {
     private readonly EdgeDBClient _edgeDbClient;
-    public bool hide = false;
+    public bool Hide = false;
     [BindProperty]
     public IFormFile File { get; set; }
 
@@ -18,9 +18,9 @@ public class AdminPageModel : PageModel
     {
         _edgeDbClient = edgeDbClient;
     }
-    public async Task<IActionResult> OnGetAsync(string emaile)
+    public async Task<IActionResult> OnGetAsync(string emaile, bool hide)
     {
-
+        Hide = hide;
         HttpContext.Session.SetString("Email", emaile);
         var query = "SELECT restaurant { opening_hours, menu_upload_date,menu_pdf,email,tags, password,restaurant,main_photo ,phone_number,cover_photo,facebook,instagram,twitter,country,address,city,district,rating} " +
                       "FILTER restaurant.email = <str>$email LIMIT 1;";
@@ -46,9 +46,10 @@ public class AdminPageModel : PageModel
     }
     public async Task<IActionResult> OnPostAsync()
     {
-        string email = HttpContext.Session.GetString("Email");
        
+        string email = HttpContext.Session.GetString("Email");
 
+       
         if (File != null && File.Length > 0)
         {
 
@@ -78,7 +79,7 @@ public class AdminPageModel : PageModel
                         { "menu_pdf", File.FileName }
                        
         });
-        return RedirectToPage("AdminPage", new { emaile = email });
+        return RedirectToPage("AdminPage", new { emaile = email, hide = true });
     }
 }
 
