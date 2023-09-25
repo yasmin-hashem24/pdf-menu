@@ -2,6 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Web;
 using EdgeDB;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
+using SixLabors.ImageSharp.Formats.Png;
+using SixLabors.ImageSharp.Formats.Jpeg;
+using SixLabors.ImageSharp.Formats.Gif;
 namespace PDFMenu.Pages.Features.Admins;
 
 public class SettingsModel : PageModel
@@ -188,13 +193,21 @@ public class SettingsModel : PageModel
             if (File != null && File.Length > 0)
             {
 
-                // Save the uploaded file to the desired location
-                var filePath = Path.Combine("wwwroot/Images/coverpics", File.FileName);
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
+            var filePath = Path.Combine("wwwroot/Images/coverpics", File.FileName);
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                
+                using (Image image = Image.Load(File.OpenReadStream()))
                 {
-                    File.CopyTo(fileStream);
+                    int width = image.Width / 2;
+                    int height = image.Height / 2;
+                    image.Mutate(x => x.Resize(width, height, KnownResamplers.Lanczos3));
+
+                   
+                    image.Save(fileStream, new PngEncoder()); 
                 }
             }
+        }
             var query = @"
                             UPDATE restaurant
                             FILTER restaurant.email = <str>$email
@@ -248,8 +261,16 @@ public class SettingsModel : PageModel
                 var filePath = Path.Combine("wwwroot/Images/coverpics", File.FileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
-                    File.CopyTo(fileStream);
+                using (Image image = Image.Load(File.OpenReadStream()))
+                {
+                    int width = image.Width / 2;
+                    int height = image.Height / 2;
+                    image.Mutate(x => x.Resize(width, height, KnownResamplers.Lanczos3));
+
+
+                    image.Save(fileStream, new PngEncoder());
                 }
+            }
             }
             var query = @"
                             UPDATE restaurant
