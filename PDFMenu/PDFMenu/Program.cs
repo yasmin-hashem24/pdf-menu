@@ -1,14 +1,19 @@
 using EdgeDB;
-using Microsoft.Extensions.Configuration;
-using MailKit.Net.Smtp;
-using MailKit.Security;
-using Microsoft.Extensions.Options;
-using MimeKit;
 var builder = WebApplication.CreateBuilder(args);
+
+
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddEdgeDB();
+builder.Configuration.AddJsonFile("appsettings.json");
+var connectionString = builder.Configuration.GetConnectionString("EdgeDB");
+Console.WriteLine(connectionString);
+var connection = EdgeDBConnection.Parse(null, connectionString);
+builder.Services.AddEdgeDB(connection, config =>
+{
+    config.SchemaNamingStrategy = INamingStrategy.SnakeCaseNamingStrategy;
+});
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromHours(1); // Set session timeout to one hour
@@ -16,9 +21,8 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
-var app = builder.Build();
-Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mgo+DSMBMAY9C3t2VVhiQlFaclxJVHxBYVF2R2FJd1RwcV9GYUwgOX1dQl9hSXZTf0VrWXpfd31ST2c=");
 
+var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
