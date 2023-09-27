@@ -263,7 +263,12 @@ select {
     font-size: 18px;
     cursor: pointer;
 }
-
+.pdf {
+    width: 100%;
+    height: 2500px;
+    margin: 0;
+    padding: 0;
+}
 @media (max-width: 767px) {
     .col-md-4 {
         flex-basis: 80%;
