@@ -3,5 +3,5 @@ bin
 *.v2
 *.v2
 *.v2
-appsettings.json
-appsettings
+appsettings.Development.json
+appsettings.Development

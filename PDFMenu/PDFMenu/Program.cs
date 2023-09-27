@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddEdgeDB();
 builder.Configuration.AddJsonFile("appsettings.json");
+builder.Configuration.AddJsonFile("appsettings.Development.json");
 var connectionString = builder.Configuration.GetConnectionString("EdgeDB");
-Console.WriteLine(connectionString);
 var connection = EdgeDBConnection.Parse(null, connectionString);
 builder.Services.AddEdgeDB(connection, config =>
 {
