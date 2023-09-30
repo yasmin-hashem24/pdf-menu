@@ -11,15 +11,19 @@
       <p>DineDocs</p>
     </div>
   </div>
-<select onchange="if (this.value == '/page2') { showPopup(); } else { location.href = this.value + '?_=' + new Date().getTime(); }" onclick="this.selectedIndex = 0;">
-  <option value="" disabled selected hidden></option>
-  <option value="/Features/Admins/Settings/false/false/false">Settings</option>
-  <option value="/page2">Upload Menu</option>
-  <option value="/Features/Admins/Privacy">Privacy</option>
-  <option value="/Features/Admins/History">History</option>
-  <option value="/index">Logout</option>
-</select>
-
+<div class="custom-select">
+  <div class="select-trigger" onclick="toggleDropdown()">
+    <i class="fas fa-cog"></i> <!-- Font Awesome gear icon -->
+  </div>
+  <select id="mySelect" onchange="handleSelection()">
+    <option value="" disabled selected hidden></option>
+    <option value="/Features/Admins/Settings/false/false/false">Settings</option>
+    <option value="/page2">Upload Menu</option>
+    <option value="/Features/Admins/Privacy">Privacy</option>
+    <option value="/Features/Admins/History">History</option>
+    <option value="/index">Logout</option>
+  </select>
+</div>
 
   <div class="header-right">
     <a href="/Index" class="header-button">Home</a>
@@ -97,35 +101,48 @@
 
 
       <div class="col-md-4 col-sm-6">
-           <div class="bluee">
+       <div class="bluee">
         <div class="shadow-sm rounded-lg d-flex flex-column justify-content-center align-items-center">
-        
-          <a href="/Features/NormalUsers/PDFMenu/@Model.RestaurantGot.menu_pdf" class="pic1">View PDF Menu</a>
-          <div class="d-flex align-items-center">
-            <i class="far fa-calendar-alt date-icon"></i>
-            <p class="date-text">@Model.RestaurantGot.menu_upload_date Last Updated</p>
-          </div>
+            @if (string.IsNullOrEmpty(Model.RestaurantGot.menu_pdf))
+            {
+                <p>No menu uploaded yet</p>
+            }
+            else
+            {
+                <a href="/Features/NormalUsers/PDFMenu/@Model.RestaurantGot.menu_pdf" class="pic1">View PDF Menu</a>
+                <div class="d-flex align-items-center">
+                    <i class="far fa-calendar-alt date-icon"></i>
+                    <p class="date-text">@Model.RestaurantGot.menu_upload_date Last Updated</p>
+                </div>
+            }
         </div>
-         </div>
+    </div>
       </div>
-      <div class="col-md-4 col-sm-6">
-            <div class="bluee">
-               <div class="shadow-sm rounded-lg d-flex flex-column justify-content-center align-items-center">
-                      <div class="contact">Contact Us</div>
-               
-                      <div class="d-flex align-items-center mt-3">
-                        <a href=@Model.RestaurantGot.facebook target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href=@Model.RestaurantGot.instagram target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href=@Model.RestaurantGot.twitter target="_blank"><i class="fab fa-twitter"></i></a>
-                      <a href="mailto:{@Model.RestaurantGot.email}" target="_blank"><i class="fa fa-envelope"></i></a>
-
-                     </div>
-               </div>
-
-            </div>
-
+     <div class="col-md-4 col-sm-6">
+  <div class="bluee">
+    <div class="shadow-sm rounded-lg d-flex flex-column justify-content-center align-items-center">
+      <div class="contact">Contact Us</div>
+      <div class="d-flex align-items-center mt-3">
+        @if (!string.IsNullOrEmpty(Model.RestaurantGot.facebook))
+        {
+          <a href="@Model.RestaurantGot.facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+        }
+        @if (!string.IsNullOrEmpty(Model.RestaurantGot.instagram))
+        {
+          <a href="@Model.RestaurantGot.instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        }
+        @if (!string.IsNullOrEmpty(Model.RestaurantGot.twitter))
+        {
+          <a href="@Model.RestaurantGot.twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+        }
+        @if (!string.IsNullOrEmpty(Model.RestaurantGot.email))
+        {
+          <a href="mailto:@Model.RestaurantGot.email" target="_blank"><i class="fa fa-envelope"></i></a>
+        }
       </div>
     </div>
+  </div>
+</div>
 
   </div>
 </div>
@@ -200,7 +217,7 @@ function hidePopup() {
 
   // Check if the current time is within the opening hours
   if (startTime <= currentTime && currentTime <= endTime) {
-    document.getElementById('opening-hours').innerText = 'Opened';
+    document.getElementById('opening-hours').innerText = 'Currently Open';
     document.getElementById('opening-hours').classList.add('opened');
   } else {
     document.getElementById('opening-hours').innerText = 'Closed';
@@ -213,3 +230,25 @@ function hidePopup() {
       window.location.href = '/Features/Admins/Settings';
     }
 </script>
+
+ <script>
+  function toggleDropdown() {
+  var select = document.getElementById("mySelect");
+  var selectWrapper = document.querySelector(".custom-select");
+
+  selectWrapper.classList.toggle("open");
+  select.focus();
+}
+
+function handleSelection() {
+  var select = document.getElementById("mySelect");
+  
+  if (select.value == "/page2") {
+    showPopup();
+  } else {
+    var currentTime = new Date().getTime();
+    var url = select.value + "?_=" + currentTime;
+    location.href = url;
+  }
+}
+ </script>

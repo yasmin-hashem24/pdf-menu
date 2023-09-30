@@ -1,4 +1,35 @@
-﻿
+﻿.custom-select {
+    position: relative;
+    display: inline-block;
+}
+
+    .custom-select .select-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+    }
+
+        .custom-select .select-trigger i {
+            color: #999999;
+        }
+
+    .custom-select select {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 2;
+    }
 .popup {
     position: fixed;
     z-index: 9999;

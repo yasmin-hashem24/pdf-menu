@@ -85,35 +85,50 @@
       </div>
 
 
-      <div class="col-md-4 ">
-        <div class="bluee">
-            <div class="shadow-sm rounded-lg d-flex flex-column justify-content-center align-items-center">
-        
-              <a href="/Features/NormalUsers/PDFMenu/@Model.RestaurantGot.menu_pdf" class="pic1">View PDF Menu</a>
-              <div class="d-flex align-items-center">
-                <i class="far fa-calendar-alt date-icon"></i>
-                <p class="date-text">@Model.RestaurantGot.menu_upload_date Last Updated</p>
-              </div>
-            </div>
+<div class="col-md-4">
+    <div class="bluee">
+        <div class="shadow-sm rounded-lg d-flex flex-column justify-content-center align-items-center">
+            @if (string.IsNullOrEmpty(Model.RestaurantGot.menu_pdf))
+            {
+                <p>No menu uploaded yet</p>
+            }
+            else
+            {
+                <a href="/Features/NormalUsers/PDFMenu/@Model.RestaurantGot.menu_pdf" class="pic1">View PDF Menu</a>
+                <div class="d-flex align-items-center">
+                    <i class="far fa-calendar-alt date-icon"></i>
+                    <p class="date-text">@Model.RestaurantGot.menu_upload_date Last Updated</p>
+                </div>
+            }
         </div>
+    </div>
+</div>
+
+     <div class="col-md-4 ">
+  <div class="bluee">
+    <div class="shadow-sm rounded-lg d-flex flex-column justify-content-center align-items-center">
+      <div class="contact">Contact Us</div>
+      <div class="d-flex align-items-center mt-3">
+        @if (!string.IsNullOrEmpty(Model.RestaurantGot.facebook))
+        {
+          <a href="@Model.RestaurantGot.facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+        }
+        @if (!string.IsNullOrEmpty(Model.RestaurantGot.instagram))
+        {
+          <a href="@Model.RestaurantGot.instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        }
+        @if (!string.IsNullOrEmpty(Model.RestaurantGot.twitter))
+        {
+          <a href="@Model.RestaurantGot.twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+        }
+        @if (!string.IsNullOrEmpty(Model.RestaurantGot.email))
+        {
+          <a href="mailto:@Model.RestaurantGot.email" target="_blank"><i class="fa fa-envelope"></i></a>
+        }
       </div>
-      <div class="col-md-4 ">
-          <div class="bluee">
-               <div class="shadow-sm rounded-lg d-flex flex-column justify-content-center align-items-center">
-                      <div class="contact">Contact Us</div>
-               
-                      <div class="d-flex align-items-center mt-3">
-                        <a href=@Model.RestaurantGot.facebook target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href=@Model.RestaurantGot.instagram target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href=@Model.RestaurantGot.twitter target="_blank"><i class="fab fa-twitter"></i></a>
-                         <a href="mailto:@Model.RestaurantGot.email" target="_blank"><i class="fa fa-envelope"></i></a>
-
-                      </div>
-               </div>
-
-          </div>
-
-      </div>
+    </div>
+  </div>
+</div>
     </div>
 
    </div>
@@ -139,7 +154,7 @@
     endTime = hours + ':' + endTime.split(':')[1];
   }
   if (startTime <= currentTime && currentTime <= endTime) {
-    document.getElementById('opening-hours').innerText = 'Opened';
+    document.getElementById('opening-hours').innerText = 'Currently Open';
     document.getElementById('opening-hours').classList.add('opened');
   } else {
     document.getElementById('opening-hours').innerText = 'Closed';

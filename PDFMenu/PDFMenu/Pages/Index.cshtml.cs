@@ -12,17 +12,17 @@ public class IndexModel : PageModel
     public List<RestaurantGot> RestaurantsForSearch { get; set; }
 
     public string[] CitiesOfSearch { get; set; } = new string[] {
-    "Cairo",
     "Alexandria",
-    "Sharm El Sheikh",
-    "Hurghada",
-    "Luxor",
     "Aswan",
-    "Marsa Alam",
-    "Port Said",
-    "Ismailia",
+    "Cairo",
     "El Minya",
     "Giza",
+    "Hurghada",
+    "Ismailia",
+    "Luxor",
+    "Marsa Alam",
+    "Port Said",
+    "Sharm El Sheikh",
     "Saqqara",
     "Tanta"
 };
